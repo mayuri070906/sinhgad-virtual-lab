@@ -4,3 +4,4 @@ mysql-connector-python==9.5.0
 PyMySQL==1.1.2
 gunicorn==23.0.0
 channels==4.3.2
+daphne==4.2.1
