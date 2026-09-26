@@ -1,0 +1,345 @@
+/* =========================================
+   BST VISUALIZATION PAGE
+========================================= */
+
+.bst-page {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 30px 70px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.page-header {
+    margin-bottom: 35px;
+}
+
+.small-title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #52637a;
+    margin-bottom: 15px;
+}
+
+.page-header h1 {
+    font-size: 44px;
+    color: #071b38;
+    margin: 0 0 12px;
+}
+
+.page-header p {
+    color: #536b87;
+    font-size: 17px;
+}
+
+
+/* =========================================
+   COMMON SECTIONS
+========================================= */
+
+.control-section,
+.tree-section,
+.search-section,
+.flow-section,
+.result-section {
+    background: #ffffff;
+    border: 1px solid #dfe5ed;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+}
+
+.control-section h2,
+.tree-section h2,
+.search-section h2,
+.flow-section h2,
+.result-section h2 {
+    margin-top: 0;
+    color: #0a2344;
+    font-size: 25px;
+}
+
+.control-section p,
+.search-section p,
+.flow-section p {
+    color: #536b87;
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.input-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.input-row input {
+    width: 360px;
+    max-width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #c8d1dc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.input-row input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.input-row button {
+    padding: 13px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #0b1729;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.input-row button:hover {
+    background: #1d3557;
+}
+
+.secondary-btn {
+    background: #64748b !important;
+}
+
+.secondary-btn:hover {
+    background: #475569 !important;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.message {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   TREE WRAPPER
+========================================= */
+
+.tree-wrapper {
+    width: 100%;
+    min-height: 520px;
+
+    background: #202020;
+
+    border-radius: 12px;
+
+    overflow: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 40px 30px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   SVG
+========================================= */
+
+.tree-svg {
+    display: block;
+
+    min-width: 700px;
+
+    width: 100%;
+
+    overflow: visible;
+}
+
+
+/* =========================================
+   TREE EDGES
+========================================= */
+
+.tree-edge {
+    stroke: #ffffff;
+    stroke-width: 2.5;
+    fill: none;
+    opacity: 0.95;
+}
+
+
+/* =========================================
+   TREE NODE
+========================================= */
+
+.tree-node {
+    fill: #202020;
+    stroke: #ffffff;
+    stroke-width: 3;
+}
+
+.node-text {
+    fill: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    user-select: none;
+}
+
+
+/* =========================================
+   CURRENT SEARCH NODE
+========================================= */
+
+.tree-node.current {
+    fill: #2563eb;
+    stroke: #60a5fa;
+    stroke-width: 4;
+}
+
+
+/* =========================================
+   FOUND NODE
+========================================= */
+
+.tree-node.found {
+    fill: #16a34a;
+    stroke: #86efac;
+    stroke-width: 5;
+}
+
+
+/* =========================================
+   NOT FOUND
+========================================= */
+
+.tree-node.not-found {
+    fill: #7f1d1d;
+    stroke: #f87171;
+}
+
+
+/* =========================================
+   SEARCH FLOW
+========================================= */
+
+.search-flow {
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.flow-step {
+    background: #f5f7fa;
+    border-left: 5px solid #2563eb;
+
+    padding: 13px 16px;
+
+    border-radius: 8px;
+
+    color: #183153;
+
+    font-size: 16px;
+}
+
+.flow-step.found-step {
+    border-left-color: #16a34a;
+    background: #f0fdf4;
+}
+
+.flow-step.not-found-step {
+    border-left-color: #dc2626;
+    background: #fef2f2;
+}
+
+.empty-flow {
+    color: #64748b;
+}
+
+
+/* =========================================
+   RESULT
+========================================= */
+
+.search-result {
+    padding: 16px;
+
+    border-radius: 9px;
+
+    background: #f5f7fa;
+
+    color: #183153;
+
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+.search-result.success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.search-result.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .bst-page {
+        padding: 25px 15px 50px;
+    }
+
+    .page-header h1 {
+        font-size: 32px;
+    }
+
+    .tree-wrapper {
+        min-height: 450px;
+        padding: 30px 10px;
+    }
+
+    .tree-svg {
+        min-width: 650px;
+    }
+
+    .input-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .input-row input {
+        width: 100%;
+    }
+
+    .input-row button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,498 @@
+/* =========================================
+   PAGE
+========================================= */
+
+.traversal-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 35px 25px 60px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.traversal-page .page-header {
+    margin-bottom: 30px;
+}
+
+.traversal-page .small-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+.traversal-page .page-header h1 {
+    font-size: 40px;
+    color: #0f172a;
+    margin: 0 0 12px;
+}
+
+.traversal-page .page-header > p:last-child {
+    font-size: 17px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   CONTROL CARD
+========================================= */
+
+.control-card {
+    background: white;
+    border: 1px solid #dbe2ea;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+}
+
+.control-card h2 {
+    margin: 0 0 8px;
+    color: #0f172a;
+    font-size: 25px;
+}
+
+.helper-text {
+    color: #64748b;
+    margin-bottom: 18px;
+}
+
+.input-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.input-row input {
+    width: 220px;
+    height: 46px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 0 14px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.input-row input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.primary-btn,
+.reset-btn,
+.traversal-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 0 20px;
+    height: 46px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.primary-btn {
+    background: #0f172a;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #1e293b;
+    transform: translateY(-1px);
+}
+
+.reset-btn {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.reset-btn:hover {
+    background: #cbd5e1;
+}
+
+.message {
+    min-height: 22px;
+    margin: 14px 0 0;
+    font-weight: 600;
+    color: #2563eb;
+}
+
+
+/* =========================================
+   TREE SECTION
+========================================= */
+
+.tree-section {
+    background: white;
+    border: 1px solid #dbe2ea;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+}
+
+.section-heading h2 {
+    margin: 0 0 7px;
+    color: #0f172a;
+    font-size: 25px;
+}
+
+.section-heading p {
+    margin: 0;
+    color: #64748b;
+}
+
+
+/* =========================================
+   TREE CANVAS
+========================================= */
+
+.tree-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 520px;
+
+    margin-top: 25px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+
+/* SVG */
+
+.tree-svg {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    overflow: visible;
+}
+
+
+/* EDGE */
+
+.tree-edge {
+    stroke: #94a3b8;
+    stroke-width: 2.5;
+}
+
+
+/* NODE CONTAINER */
+
+.tree-nodes {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =========================================
+   TREE NODE
+========================================= */
+
+.tree-node {
+    position: absolute;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    border: 3px solid #2563eb;
+
+    color: #1e3a8a;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    box-sizing: border-box;
+
+    z-index: 5;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* INSERT ANIMATION */
+
+.tree-node.inserted {
+    animation: nodeInsert 0.45s ease;
+}
+
+@keyframes nodeInsert {
+
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+
+    70% {
+        transform: translate(-50%, -50%) scale(1.15);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================
+   TRAVERSAL HIGHLIGHT
+========================================= */
+
+.tree-node.active {
+    background: #22c55e;
+
+    border-color: #15803d;
+
+    color: white;
+
+    transform: translate(-50%, -50%) scale(1.15);
+
+    box-shadow:
+        0 0 0 8px rgba(34, 197, 94, 0.18),
+        0 8px 20px rgba(34, 197, 94, 0.25);
+}
+
+.tree-node.visited {
+    background: #dbeafe;
+    border-color: #60a5fa;
+    color: #1d4ed8;
+}
+
+
+/* =========================================
+   TRAVERSAL CARD
+========================================= */
+
+.traversal-card {
+    background: white;
+
+    border: 1px solid #dbe2ea;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.06);
+}
+
+.traversal-card h2 {
+    margin: 0 0 8px;
+
+    font-size: 25px;
+
+    color: #0f172a;
+}
+
+.traversal-card > p {
+    color: #64748b;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   TRAVERSAL BUTTONS
+========================================= */
+
+.traversal-buttons {
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin: 22px 0;
+}
+
+.traversal-btn {
+    background: #2563eb;
+
+    color: white;
+
+    min-width: 130px;
+}
+
+.traversal-btn:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+.traversal-btn:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================
+   CURRENT STEP
+========================================= */
+
+.current-step {
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+
+    border-radius: 10px;
+
+    padding: 18px;
+
+    margin-top: 15px;
+}
+
+.current-step h3,
+.traversal-result h3 {
+    margin: 0 0 8px;
+
+    color: #0f172a;
+
+    font-size: 18px;
+}
+
+.current-step p {
+    margin: 0;
+
+    color: #1d4ed8;
+
+    font-weight: 700;
+
+    min-height: 22px;
+}
+
+
+/* =========================================
+   RESULT
+========================================= */
+
+.traversal-result {
+    margin-top: 18px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+
+    padding: 18px;
+}
+
+#result {
+    min-height: 28px;
+
+    color: #0f172a;
+
+    font-size: 19px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   EMPTY TREE
+========================================= */
+
+.empty-tree {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: #94a3b8;
+
+    font-size: 17px;
+
+    text-align: center;
+
+    width: 100%;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .traversal-page {
+        padding: 25px 15px 40px;
+    }
+
+    .traversal-page .page-header h1 {
+        font-size: 30px;
+    }
+
+    .tree-wrapper {
+        height: 450px;
+    }
+
+    .tree-node {
+        width: 45px;
+        height: 45px;
+        font-size: 13px;
+    }
+
+    .input-row {
+        flex-direction: column;
+    }
+
+    .input-row input,
+    .primary-btn,
+    .reset-btn {
+        width: 100%;
+    }
+
+}

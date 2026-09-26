@@ -1,0 +1,1180 @@
+/* =========================================================
+   SJF PAGE
+========================================================= */
+
+.sjf-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 28px 32px 60px;
+  background: #f8fafc;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.sjf-header {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 24px;
+  box-sizing: border-box;
+}
+
+.sjf-header-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.sjf-back-button {
+  padding: 9px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.sjf-back-button:hover {
+  background: #f1f5f9;
+}
+
+.sjf-os-badge {
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.sjf-header h1 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.sjf-header > p {
+  margin: 10px 0 0;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.sjf-card {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 24px;
+  padding: 26px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.section-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.section-title > span {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #eff6ff;
+  font-size: 20px;
+}
+
+.section-title h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.section-title p {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* =========================================================
+   THEORY
+========================================================= */
+
+.theory-text {
+  margin: 0 0 14px;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.theory-text strong {
+  color: #1e293b;
+}
+
+.theory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.theory-box {
+  padding: 18px;
+  border: 1px solid #dbeafe;
+  border-radius: 10px;
+  background: #f8fbff;
+  box-sizing: border-box;
+}
+
+.theory-box h3 {
+  margin: 0 0 8px;
+  color: #1e3a8a;
+  font-size: 15px;
+}
+
+.theory-box p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   FORMULA BOX
+========================================================= */
+
+.formula-box {
+  margin-top: 20px;
+  padding: 18px;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  background: #eff6ff;
+}
+
+.formula-box > strong {
+  display: block;
+  margin-bottom: 12px;
+  color: #1e3a8a;
+  font-size: 15px;
+}
+
+.formula-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formula-list span {
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   LEARNING SECTIONS
+========================================================= */
+
+.learning-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.learning-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid #dbeafe;
+  border-radius: 10px;
+  background: #f8fbff;
+}
+
+.learning-item > span {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.learning-item p {
+  margin: 3px 0 0;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.prerequisite-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.prerequisite-box {
+  padding: 17px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+.prerequisite-box strong {
+  display: block;
+  margin-bottom: 7px;
+  color: #1e3a8a;
+  font-size: 14px;
+}
+
+.prerequisite-box span {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.algorithm-list {
+  margin: 0;
+  padding-left: 24px;
+  color: #475569;
+}
+
+.algorithm-list li {
+  margin-bottom: 10px;
+  padding-left: 5px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.algorithm-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   INPUT AREA
+========================================================= */
+
+.input-area {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 200px;
+}
+
+.input-group label {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.input-group input {
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  transition: 0.2s ease;
+}
+
+.input-group input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.input-group input::placeholder {
+  color: #94a3b8;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.add-btn {
+  height: 42px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.add-btn:hover {
+  background: #1d4ed8;
+}
+
+.reset-btn {
+  height: 42px;
+  padding: 0 18px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.reset-btn:hover {
+  background: #f8fafc;
+}
+
+/* =========================================================
+   PROCESS QUEUE
+========================================================= */
+
+.process-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.process-chip {
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 12px 12px 16px;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  background: #eff6ff;
+  box-sizing: border-box;
+}
+
+.chip-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.chip-content strong {
+  color: #1e3a8a;
+  font-size: 15px;
+}
+
+.chip-content small {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.remove-process {
+  width: 27px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #fee2e2;
+  color: #dc2626;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.remove-process:hover {
+  background: #fecaca;
+}
+
+/* =========================================================
+   GANTT CHART CONTAINER
+========================================================= */
+
+.gantt-container {
+  width: 100%;
+  margin-top: 30px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   GANTT TOP PROCESS LABELS
+========================================================= */
+
+.gantt-top-labels {
+  width: 100%;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  margin: 0 0 10px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gantt-top-label {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   MAIN GANTT BAR
+========================================================= */
+
+.gantt-chart {
+  width: 100%;
+  height: 90px;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  position: relative !important;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 2px solid #2563eb;
+  border-radius: 10px;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   GANTT BLOCK
+========================================================= */
+
+.gantt-block {
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  float: none !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  height: 100%;
+
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
+  flex-basis: auto !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  color: #ffffff;
+
+  border-right: 2px solid #ffffff;
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.gantt-block:last-child {
+  border-right: none;
+}
+
+/* =========================================================
+   GANTT COLORS
+========================================================= */
+
+.gantt-color-0 {
+  background: #2563eb;
+}
+
+.gantt-color-1 {
+  background: #1d4ed8;
+}
+
+.gantt-color-2 {
+  background: #3b82f6;
+}
+
+.gantt-color-3 {
+  background: #1e40af;
+}
+
+.gantt-color-4 {
+  background: #60a5fa;
+}
+
+/* =========================================================
+   PROCESS ID INSIDE GANTT
+========================================================= */
+
+.gantt-block strong {
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   BURST TIME INSIDE GANTT
+========================================================= */
+
+.gantt-block span {
+  display: block;
+  margin: 6px 0 0;
+  padding: 0;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   GANTT TIMELINE
+========================================================= */
+
+.gantt-times {
+  width: 100%;
+  height: 38px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gantt-time {
+  position: absolute;
+  top: 8px;
+  margin: 0;
+  padding: 0;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   START TIME
+========================================================= */
+
+.gantt-start-time {
+  left: 0;
+}
+
+/* =========================================================
+   MIDDLE BOUNDARY TIMES
+========================================================= */
+
+.gantt-boundary-time {
+  transform: translateX(-50%);
+}
+
+/* =========================================================
+   FINAL TIME
+========================================================= */
+
+.gantt-final-time {
+  right: 0;
+}
+
+/* =========================================================
+   TIMELINE MARKERS
+========================================================= */
+
+.gantt-start-time::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 1px;
+  height: 7px;
+  background: #94a3b8;
+}
+
+.gantt-boundary-time::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 1px;
+  height: 7px;
+  background: #94a3b8;
+}
+
+.gantt-final-time::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 0;
+  width: 1px;
+  height: 7px;
+  background: #94a3b8;
+}
+
+/* =========================================================
+   RESULTS TABLE
+========================================================= */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.sjf-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+}
+
+.sjf-table th {
+  padding: 13px 14px;
+  background: #eff6ff;
+  color: #1e3a8a;
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+  border-bottom: 1px solid #bfdbfe;
+}
+
+.sjf-table td {
+  padding: 13px 14px;
+  color: #475569;
+  font-size: 14px;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.sjf-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.sjf-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.process-cell {
+  color: #1d4ed8 !important;
+  font-weight: 800;
+}
+
+/* =========================================================
+   AVERAGE RESULTS
+========================================================= */
+
+.average-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.average-box {
+  padding: 20px;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  background: #f8fbff;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.average-box span {
+  display: block;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.average-box strong {
+  display: block;
+  margin-top: 8px;
+  color: #1d4ed8;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.average-box small {
+  display: block;
+  margin-top: 4px;
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+  padding: 45px 20px;
+  text-align: center;
+}
+
+.empty-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #eff6ff;
+  font-size: 28px;
+}
+
+.empty-state h3 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 20px;
+}
+
+.empty-state p {
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* =========================================================
+   CODE EDITOR SECTION
+========================================================= */
+
+.sjf-code-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 24px;
+}
+
+/* =========================================================
+   COMPLEXITY / ANALYSIS
+========================================================= */
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.analysis-box {
+  padding: 18px;
+  border: 1px solid #dbeafe;
+  border-radius: 10px;
+  background: #f8fbff;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.analysis-box span {
+  display: block;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.analysis-box strong {
+  display: block;
+  margin-top: 8px;
+  color: #1d4ed8;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.analysis-box p {
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   KEY TAKEAWAYS
+========================================================= */
+
+.takeaway-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.takeaway-list div {
+  padding: 13px 15px;
+  border: 1px solid #dbeafe;
+  border-radius: 9px;
+  background: #f8fbff;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   PRACTICE
+========================================================= */
+
+.practice-problem {
+  padding: 20px;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  background: #f8fbff;
+}
+
+.practice-problem h3 {
+  margin: 0 0 8px;
+  color: #1e3a8a;
+  font-size: 16px;
+}
+
+.practice-problem p {
+  margin: 0;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.practice-input-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.practice-input-row input {
+  width: 220px;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  box-sizing: border-box;
+  color: #0f172a;
+  font-size: 14px;
+}
+
+.practice-input-row input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.practice-btn,
+.quiz-submit-btn,
+.complete-btn {
+  min-height: 42px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.practice-btn:hover,
+.quiz-submit-btn:hover,
+.complete-btn:hover {
+  background: #1d4ed8;
+}
+
+.practice-message {
+  margin-top: 12px !important;
+  color: #1e3a8a !important;
+  font-weight: 700;
+}
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+.quiz-question {
+  margin-bottom: 20px;
+  padding: 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+.quiz-question h3 {
+  margin: 0 0 13px;
+  color: #1e293b;
+  font-size: 15px;
+}
+
+.quiz-question label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 9px;
+  color: #475569;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.quiz-question input {
+  accent-color: #2563eb;
+}
+
+.quiz-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 15px 17px;
+  border-radius: 10px;
+}
+
+.quiz-pass {
+  background: #dcfce7;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+.quiz-practice {
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  color: #92400e;
+}
+
+.quiz-result strong {
+  font-size: 16px;
+}
+
+.quiz-result span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   COMPLETION
+========================================================= */
+
+.completion-card {
+  text-align: left;
+}
+
+.completed-message {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 18px;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  background: #f0fdf4;
+}
+
+.completed-message strong {
+  color: #166534;
+  font-size: 16px;
+}
+
+.completed-message span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .sjf-page {
+    padding: 24px 20px 50px;
+  }
+
+  .sjf-card {
+    padding: 22px;
+  }
+
+  .theory-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .prerequisite-grid,
+  .analysis-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .sjf-page {
+    padding: 18px 12px 40px;
+  }
+
+  .sjf-card {
+    padding: 18px;
+  }
+
+  .sjf-header h1 {
+    font-size: 27px;
+  }
+
+  .section-title h2 {
+    font-size: 21px;
+  }
+
+  .section-title > span {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .theory-grid,
+  .learning-list,
+  .prerequisite-grid,
+  .analysis-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .input-area {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input-group {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .add-btn,
+  .reset-btn {
+    width: 100%;
+  }
+
+  .average-container {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-input-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .practice-input-row input,
+  .practice-btn,
+  .quiz-submit-btn,
+  .complete-btn {
+    width: 100%;
+  }
+
+  .quiz-result {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* ---------------------------------------------
+     GANTT - KEEP HORIZONTAL
+  --------------------------------------------- */
+
+  .gantt-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .gantt-top-labels {
+    min-width: 600px;
+  }
+
+  .gantt-chart {
+    min-width: 600px;
+  }
+
+  .gantt-times {
+    min-width: 600px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .sjf-page {
+    padding: 14px 8px 30px;
+  }
+
+  .sjf-card {
+    padding: 15px;
+  }
+
+  .sjf-header-top {
+    flex-wrap: wrap;
+  }
+
+  .sjf-header h1 {
+    font-size: 24px;
+  }
+
+  .section-title {
+    gap: 10px;
+  }
+
+  .section-title h2 {
+    font-size: 19px;
+  }
+
+  .process-chip {
+    width: 100%;
+  }
+}

@@ -1,0 +1,1423 @@
+/* =====================================================
+   GLOBAL
+   ===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+.rr-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 6% 60px;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.rr-header {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 30px;
+}
+
+/* =====================================================
+   BACK BUTTON
+   ===================================================== */
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 10px 17px;
+  border: 1px solid #dbe3ef;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+  background: #f8faff;
+  color: #2563eb;
+  border-color: #2563eb;
+  transform: translateX(-2px);
+}
+
+/* =====================================================
+   BADGE
+   ===================================================== */
+
+.rr-badge {
+  display: inline-block;
+  padding: 8px 14px;
+  margin-bottom: 14px;
+  border-radius: 20px;
+  background: #eef4ff;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* =====================================================
+   HEADER TITLE
+   ===================================================== */
+
+.rr-header h1 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.rr-header p {
+  max-width: 850px;
+  margin-top: 12px;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* =====================================================
+   COMMON CARD
+   ===================================================== */
+
+.rr-card {
+  width: 100%;
+  max-width: 1200px;
+  margin: 22px auto;
+  padding: 28px;
+  border: 1px solid #dbe3ef;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+}
+
+/* =====================================================
+   SECTION TITLE
+   ===================================================== */
+
+.section-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.section-title > span {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #eef4ff;
+  font-size: 21px;
+}
+
+.section-title h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.section-title p {
+  margin: 5px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* =====================================================
+   THEORY
+   ===================================================== */
+
+.theory-text {
+  margin: 0 0 12px;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.theory-text strong {
+  color: #0f172a;
+}
+
+/* =====================================================
+   THEORY GRID
+   ===================================================== */
+
+.theory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.theory-box {
+  padding: 18px;
+  border: 1px solid #dbe7ff;
+  border-radius: 14px;
+  background: #f8faff;
+  transition: all 0.2s ease;
+}
+
+.theory-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.08);
+}
+
+.theory-box h3 {
+  margin: 0 0 8px;
+  color: #2563eb;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.theory-box p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   FORMULA BOX
+   ===================================================== */
+
+.formula-box {
+  margin-top: 20px;
+  padding: 18px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 14px;
+  background: #f8fafc;
+}
+
+.formula-box strong {
+  color: #0f172a;
+  font-size: 15px;
+}
+
+.formula-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.formula-list span {
+  padding: 9px 13px;
+  border-radius: 8px;
+  background: #eef4ff;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =====================================================
+   LEARNING LIST
+   ===================================================== */
+
+.learning-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 30px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.learning-list li {
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.7;
+  padding-left: 5px;
+}
+
+/* =====================================================
+   PREREQUISITES
+   ===================================================== */
+
+.prerequisite-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.prerequisite-box {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 17px;
+  border: 1px solid #dbe7ff;
+  border-radius: 14px;
+  background: #f8faff;
+}
+
+.prerequisite-box strong {
+  color: #2563eb;
+  font-size: 15px;
+}
+
+.prerequisite-box span {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =====================================================
+   ALGORITHM
+   ===================================================== */
+
+.algorithm-list {
+  margin: 0;
+  padding-left: 25px;
+}
+
+.algorithm-list li {
+  margin-bottom: 12px;
+  padding-left: 6px;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.algorithm-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* =====================================================
+   INPUT AREA
+   ===================================================== */
+
+.input-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 14px;
+  align-items: end;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.input-group label {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.input-group input {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  outline: none;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.input-group input::placeholder {
+  color: #94a3b8;
+}
+
+.input-group input:hover {
+  border-color: #94a3b8;
+}
+
+.input-group input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* =====================================================
+   REMOVE NUMBER INPUT ARROWS
+   ===================================================== */
+
+.input-group input::-webkit-outer-spin-button,
+.input-group input::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+.input-group input[type="number"] {
+  appearance: textfield;
+}
+
+/* =====================================================
+   QUANTUM AREA
+   ===================================================== */
+
+.quantum-area {
+  display: grid;
+  grid-template-columns: 1fr 2fr auto;
+  gap: 14px;
+  align-items: end;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.quantum-info {
+  min-height: 48px;
+  padding: 8px 15px;
+  border: 1px solid #dbe7ff;
+  border-radius: 10px;
+  background: #f8faff;
+}
+
+.quantum-info strong {
+  color: #2563eb;
+  font-size: 14px;
+}
+
+.quantum-info p {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.add-btn,
+.reset-btn {
+  height: 48px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* ADD BUTTON */
+
+.add-btn {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.add-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(37, 99, 235, 0.2);
+}
+
+.add-btn:active {
+  transform: translateY(0);
+}
+
+/* RESET BUTTON */
+
+.reset-btn {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.reset-btn:hover {
+  background: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+.reset-btn:active {
+  transform: translateY(0);
+}
+
+/* =====================================================
+   PROCESS QUEUE
+   ===================================================== */
+
+.process-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.process-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid #dbe7ff;
+  border-radius: 10px;
+  background: #f8faff;
+  transition: all 0.2s ease;
+}
+
+.process-chip:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+}
+
+.process-chip span {
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.process-chip small {
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* REMOVE PROCESS */
+
+.process-chip button {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #334155;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.process-chip button:hover {
+  background: #cbd5e1;
+  color: #0f172a;
+}
+
+/* =====================================================
+   TABLE WRAPPER
+   ===================================================== */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* =====================================================
+   TABLE
+   ===================================================== */
+
+.rr-table {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.rr-table th {
+  padding: 15px;
+  background: #2563eb;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.rr-table td {
+  padding: 15px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #475569;
+  text-align: center;
+  font-size: 14px;
+}
+
+.rr-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.rr-table tbody tr:hover {
+  background: #f8faff;
+}
+
+.rr-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.process-cell {
+  color: #2563eb !important;
+  font-weight: 800;
+}
+
+/* =====================================================
+   TABLE SCROLLBAR
+   ===================================================== */
+
+.table-wrapper::-webkit-scrollbar {
+  height: 7px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+/* =====================================================
+   AVERAGE CONTAINER
+   ===================================================== */
+
+.average-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+/* =====================================================
+   AVERAGE BOX
+   ===================================================== */
+
+.average-box {
+  padding: 20px;
+  border: 1px solid #dbe7ff;
+  border-radius: 14px;
+  background: #f8faff;
+}
+
+.average-box span {
+  display: block;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.average-box strong {
+  display: block;
+  margin-top: 8px;
+  color: #2563eb;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.average-box small {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+/* =====================================================
+   GANTT CARD
+   ===================================================== */
+
+.gantt-card {
+  overflow: hidden;
+}
+
+/* =====================================================
+   GANTT SCROLL CONTAINER
+   ===================================================== */
+
+.gantt-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 10px;
+  cursor: grab;
+}
+
+.gantt-scroll:active {
+  cursor: grabbing;
+}
+
+/* =====================================================
+   GANTT WRAPPER
+   ===================================================== */
+
+/*
+  IMPORTANT:
+  width: max-content
+
+  यामुळे chart process वाढल्यावर
+  छोटा/compress होणार नाही.
+
+  प्रत्येक block fixed 110px आहे.
+*/
+
+.rr-gantt-wrapper {
+  width: max-content;
+  min-width: 100%;
+  padding: 10px 2px 25px;
+}
+
+/* =====================================================
+   GANTT LABEL ROW
+   ===================================================== */
+
+.rr-gantt-label-row {
+  display: flex;
+  width: max-content;
+  height: 40px;
+  align-items: center;
+}
+
+/* =====================================================
+   TOP PROCESS LABEL
+   ===================================================== */
+
+.rr-gantt-top-label {
+  width: 110px;
+  min-width: 110px;
+  max-width: 110px;
+  flex: 0 0 110px;
+  padding: 0 5px;
+  text-align: center;
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =====================================================
+   GANTT CHART
+   ===================================================== */
+
+.rr-gantt-chart {
+  display: flex;
+  width: max-content;
+  height: 90px;
+  overflow: hidden;
+  border: 2px solid #2563eb;
+  border-radius: 10px;
+}
+
+/* =====================================================
+   GANTT BLOCK
+   ===================================================== */
+
+/*
+  FIXED BLOCK SIZE
+
+  प्रत्येक block = 110px
+
+  Process कितीही असले तरी
+  width बदलणार नाही.
+*/
+
+.rr-gantt-block {
+  width: 110px;
+  min-width: 110px;
+  max-width: 110px;
+  flex: 0 0 110px;
+  height: 86px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 5px;
+  color: #ffffff;
+  text-align: center;
+  border-right: 2px solid #ffffff;
+  overflow: hidden;
+  transition: filter 0.2s ease;
+}
+
+.rr-gantt-block:hover {
+  filter: brightness(1.08);
+}
+
+.rr-gantt-block:last-child {
+  border-right: none;
+}
+
+/* =====================================================
+   GANTT PROCESS NAME
+   ===================================================== */
+
+.rr-gantt-block strong {
+  display: block;
+  max-width: 90%;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =====================================================
+   GANTT EXECUTION TIME
+   ===================================================== */
+
+.rr-gantt-block span {
+  display: block;
+  margin-top: 7px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* =====================================================
+   GANTT COLORS
+   ===================================================== */
+
+.rr-gantt-blue {
+  background: #2563eb;
+}
+
+.rr-gantt-dark-blue {
+  background: #1d4ed8;
+}
+
+.rr-gantt-light-blue {
+  background: #3b82f6;
+}
+
+/* =====================================================
+   GANTT TIME SCALE
+   ===================================================== */
+
+.rr-gantt-times {
+  position: relative;
+  width: max-content;
+  height: 42px;
+  display: block;
+}
+
+/* =====================================================
+   TIME VALUES
+   ===================================================== */
+
+.rr-gantt-times span {
+  position: absolute;
+  top: 10px;
+  width: 110px;
+  color: #475569;
+  font-size: 13px;
+  line-height: 1;
+  white-space: nowrap;
+  z-index: 5;
+}
+
+/* =====================================================
+   SMALL LINE ABOVE TIME
+   ===================================================== */
+
+.rr-gantt-times span::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 1px;
+  height: 8px;
+  background: #94a3b8;
+}
+
+/* =====================================================
+   START TIME
+   ===================================================== */
+
+.rr-start-time {
+  transform: translateX(0);
+}
+
+/* =====================================================
+   BOUNDARY TIME
+   ===================================================== */
+
+.rr-boundary-time {
+  transform: translateX(0);
+}
+
+/* =====================================================
+   FINAL TIME
+   ===================================================== */
+
+.rr-final-time {
+  transform: translateX(0);
+}
+
+/* =====================================================
+   GANTT SCROLLBAR
+   ===================================================== */
+
+.gantt-scroll::-webkit-scrollbar {
+  height: 9px;
+}
+
+.gantt-scroll::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+.gantt-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.gantt-scroll::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* =====================================================
+   EMPTY STATE
+   ===================================================== */
+
+.empty-state {
+  width: 100%;
+  max-width: 1200px;
+  margin: 22px auto;
+  padding: 55px 20px;
+  text-align: center;
+  border: 1px dashed #cbd5e1;
+  border-radius: 18px;
+  background: #ffffff;
+}
+
+.empty-icon {
+  font-size: 45px;
+}
+
+.empty-state h3 {
+  margin: 15px 0 8px;
+  color: #0f172a;
+  font-size: 20px;
+}
+
+.empty-state p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* =====================================================
+   CODE EDITOR
+   ===================================================== */
+
+.rr-code-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 22px auto;
+}
+
+/* =====================================================
+   ANALYSIS
+   ===================================================== */
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.analysis-box {
+  padding: 18px;
+  border: 1px solid #dbe7ff;
+  border-radius: 14px;
+  background: #f8faff;
+}
+
+.analysis-box span {
+  display: block;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.analysis-box strong {
+  display: block;
+  margin-top: 8px;
+  color: #2563eb;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.analysis-box p {
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   KEY TAKEAWAYS
+   ===================================================== */
+
+.takeaway-list {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.takeaway-list li {
+  margin-bottom: 12px;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.takeaway-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* =====================================================
+   PRACTICE
+   ===================================================== */
+
+.practice-question {
+  padding: 20px;
+  border: 1px solid #dbe7ff;
+  border-radius: 14px;
+  background: #f8faff;
+}
+
+.practice-question > p {
+  margin: 0;
+  color: #334155;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.practice-input-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.practice-input-row input {
+  flex: 1;
+  height: 46px;
+  padding: 0 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+.practice-input-row input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.check-btn {
+  height: 46px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.check-btn:hover {
+  background: #1d4ed8;
+}
+
+.practice-message {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #eef4ff;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =====================================================
+   QUIZ
+   ===================================================== */
+
+.quiz-question {
+  margin-bottom: 22px;
+  padding: 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.quiz-question:last-of-type {
+  margin-bottom: 20px;
+}
+
+.quiz-question > p {
+  margin: 0 0 14px;
+  color: #334155;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.quiz-question label {
+  display: block;
+  margin-bottom: 10px;
+  color: #475569;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.quiz-question label:last-child {
+  margin-bottom: 0;
+}
+
+.quiz-question input {
+  margin-right: 9px;
+  accent-color: #2563eb;
+}
+
+.quiz-submit-btn {
+  height: 46px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.quiz-submit-btn:hover {
+  background: #1d4ed8;
+}
+
+.quiz-result {
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #eef4ff;
+  color: #2563eb;
+  font-size: 15px;
+  text-align: center;
+}
+
+/* =====================================================
+   COMPLETION
+   ===================================================== */
+
+.completion-card {
+  margin-bottom: 10px;
+}
+
+.complete-btn {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.complete-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(37, 99, 235, 0.2);
+}
+
+.completed-message {
+  padding: 18px;
+  border: 1px solid #dbe7ff;
+  border-radius: 12px;
+  background: #f8faff;
+  text-align: center;
+}
+
+.completed-message strong {
+  color: #2563eb;
+  font-size: 16px;
+}
+
+.completed-message p {
+  margin: 7px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+  /* THEORY */
+
+  .theory-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* PREREQUISITES */
+
+  .prerequisite-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* OBJECTIVE */
+
+  .learning-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* INPUT */
+
+  .input-area {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .add-btn {
+    width: 100%;
+  }
+
+  /* QUANTUM */
+
+  .quantum-area {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .quantum-info {
+    grid-column: span 2;
+  }
+
+  .reset-btn {
+    width: 100%;
+  }
+
+  /* ANALYSIS */
+
+  .analysis-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+  /* PAGE */
+
+  .rr-page {
+    padding: 25px 15px 40px;
+  }
+
+  /* HEADER */
+
+  .rr-header h1 {
+    font-size: 29px;
+  }
+
+  .rr-header p {
+    font-size: 14px;
+  }
+
+  /* CARD */
+
+  .rr-card {
+    padding: 20px;
+    margin: 18px auto;
+  }
+
+  /* SECTION */
+
+  .section-title {
+    gap: 11px;
+  }
+
+  .section-title > span {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+
+  .section-title h2 {
+    font-size: 21px;
+  }
+
+  /* THEORY */
+
+  .theory-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* PREREQUISITES */
+
+  .prerequisite-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* INPUT */
+
+  .input-area {
+    grid-template-columns: 1fr;
+  }
+
+  .add-btn {
+    width: 100%;
+  }
+
+  /* QUANTUM */
+
+  .quantum-area {
+    grid-template-columns: 1fr;
+  }
+
+  .quantum-info {
+    grid-column: auto;
+  }
+
+  .reset-btn {
+    width: 100%;
+  }
+
+  /* AVERAGE */
+
+  .average-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* ANALYSIS */
+
+  .analysis-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* PRACTICE */
+
+  .practice-input-row {
+    flex-direction: column;
+  }
+
+  .check-btn {
+    width: 100%;
+  }
+
+  /* GANTT */
+
+  .rr-gantt-wrapper {
+    min-width: max-content;
+  }
+
+  .rr-gantt-top-label {
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    flex: 0 0 100px;
+    font-size: 12px;
+  }
+
+  .rr-gantt-block {
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    flex: 0 0 100px;
+    height: 90px;
+  }
+
+  .rr-gantt-chart {
+    height: 90px;
+  }
+
+  .rr-gantt-block strong {
+    font-size: 14px;
+  }
+
+  .rr-gantt-block span {
+    font-size: 10px;
+  }
+
+  .rr-gantt-times span {
+    width: 100px;
+    font-size: 11px;
+  }
+
+  /* EMPTY */
+
+  .empty-state {
+    padding: 45px 18px;
+  }
+}
+
+/* =====================================================
+   VERY SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 400px) {
+
+  .rr-page {
+    padding: 20px 10px 35px;
+  }
+
+  .rr-card {
+    padding: 16px;
+  }
+
+  .rr-header h1 {
+    font-size: 25px;
+  }
+
+  .rr-badge {
+    font-size: 11px;
+  }
+
+  .section-title h2 {
+    font-size: 19px;
+  }
+
+  .average-box strong {
+    font-size: 26px;
+  }
+
+  /* GANTT */
+
+  .rr-gantt-top-label {
+    width: 95px;
+    min-width: 95px;
+    max-width: 95px;
+    flex-basis: 95px;
+  }
+
+  .rr-gantt-block {
+    width: 95px;
+    min-width: 95px;
+    max-width: 95px;
+    flex-basis: 95px;
+  }
+
+  .rr-gantt-times span {
+    width: 95px;
+  }
+}

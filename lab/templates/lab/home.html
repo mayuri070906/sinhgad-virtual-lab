@@ -1,0 +1,99 @@
+{% extends 'lab/base.html' %}
+
+{% block title %}
+Home - Virtual Lab
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="small-title">
+            DATA STRUCTURES VIRTUAL LAB
+        </p>
+
+        <h1>
+            Learn Data Structures
+            <span>Visually & Interactively</span>
+        </h1>
+
+        <p class="hero-text">
+
+            Understand Stack, Queue, Linked List
+            and other data structures through
+            interactive visualizations.
+
+        </p>
+
+        <a href="{% url 'data_structures' %}"
+           class="primary-btn">
+
+            Start Learning →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="features">
+
+    <div class="feature-card">
+
+        <div class="icon">
+            📚
+        </div>
+
+        <h3>
+            Learn
+        </h3>
+
+        <p>
+            Understand concepts with simple
+            explanations and examples.
+        </p>
+
+    </div>
+
+
+    <div class="feature-card">
+
+        <div class="icon">
+            🎯
+        </div>
+
+        <h3>
+            Practice
+        </h3>
+
+        <p>
+            Perform operations and practice
+            data structure algorithms.
+        </p>
+
+    </div>
+
+
+    <div class="feature-card">
+
+        <div class="icon">
+            👁️
+        </div>
+
+        <h3>
+            Visualize
+        </h3>
+
+        <p>
+            Watch every operation happen
+            step by step.
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}

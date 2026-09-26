@@ -1,0 +1,179 @@
+{% extends 'lab/base.html' %}
+{% load static %}
+
+{% block title %}
+Binary Search Tree Visualization | Virtual Lab
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet"
+      href="{% static 'lab/css/bst_visualization.css' %}">
+
+<div class="bst-page">
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <div class="page-header">
+
+        <p class="small-title">
+            VIRTUAL LAB / TREE / BINARY SEARCH TREE
+        </p>
+
+        <h1>
+            🌳 Binary Search Tree Visualization
+        </h1>
+
+        <p>
+            Enter values to create your own Binary Search Tree
+            and visualize insertion and searching step by step.
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         CREATE TREE
+    ========================== -->
+
+    <section class="control-section">
+
+        <h2>
+            🌱 Create Binary Search Tree
+        </h2>
+
+        <p>
+            Enter numbers separated by commas.
+        </p>
+
+        <div class="input-row">
+
+            <input
+                type="text"
+                id="arrayInput"
+                placeholder="Example: 50,30,70,20,40,60,80">
+
+            <button id="buildBtn">
+                Build Tree
+            </button>
+
+        </div>
+
+        <p id="treeMessage" class="message">
+            Enter values and click Build Tree.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         TREE
+    ========================== -->
+
+    <section class="tree-section">
+
+        <h2>
+            🌳 Your Binary Search Tree
+        </h2>
+
+        <div class="tree-wrapper">
+
+            <svg
+                id="treeSvg"
+                class="tree-svg">
+            </svg>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SEARCH
+    ========================== -->
+
+    <section class="search-section">
+
+        <h2>
+            🔍 Search in BST
+        </h2>
+
+        <p>
+            Enter a value to search in your tree.
+        </p>
+
+        <div class="input-row">
+
+            <input
+                type="number"
+                id="searchInput"
+                placeholder="Enter search value">
+
+            <button id="searchBtn">
+                Search
+            </button>
+
+            <button id="resetSearchBtn"
+                    class="secondary-btn">
+                Reset
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SEARCH FLOW
+    ========================== -->
+
+    <section class="flow-section">
+
+        <h2>
+            🔎 Search Flow
+        </h2>
+
+        <p>
+            Search a value to see the step-by-step flow.
+        </p>
+
+        <div id="searchFlow"
+             class="search-flow">
+
+            <p class="empty-flow">
+                No search performed yet.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RESULT
+    ========================== -->
+
+    <section class="result-section">
+
+        <h2>
+            📌 Search Result
+        </h2>
+
+        <div id="searchResult"
+             class="search-result">
+
+            No search performed yet.
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="{% static 'lab/js/bst_visualization.js' %}">
+</script>
+
+{% endblock %}

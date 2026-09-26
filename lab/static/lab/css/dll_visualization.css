@@ -1,0 +1,804 @@
+/* =========================================
+   PAGE
+   ========================================= */
+
+.dll-viz-page {
+
+    padding: 45px 20px;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.dll-viz-header {
+
+    margin-bottom: 30px;
+
+}
+
+.dll-viz-breadcrumb {
+
+    font-size: 14px;
+
+    color: #475569;
+
+    margin-bottom: 12px;
+
+}
+
+.dll-viz-title-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+}
+
+.dll-viz-title-row h1 {
+
+    font-size: 40px;
+
+    margin: 0 0 8px;
+
+    color: #111827;
+
+}
+
+.dll-viz-title-row p {
+
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 16px;
+
+}
+
+
+/* =========================================
+   NODE COUNTER
+   ========================================= */
+
+.dll-node-counter {
+
+    min-width: 96px;
+
+    padding: 15px 20px;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+}
+
+.dll-node-counter span {
+
+    color: #334155;
+
+    font-size: 14px;
+
+}
+
+.dll-node-counter strong {
+
+    font-size: 18px;
+
+    color: #111827;
+
+}
+
+
+/* =========================================
+   MAIN LAYOUT
+   ========================================= */
+
+.dll-viz-layout {
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
+
+    gap: 25px;
+
+    align-items: stretch;
+
+}
+
+
+/* =========================================
+   CARDS
+   ========================================= */
+
+.dll-visualization-card,
+.dll-operations-card {
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.05);
+
+}
+
+
+/* =========================================
+   VISUALIZATION
+   ========================================= */
+
+.dll-visualization-card {
+
+    min-height: 520px;
+
+}
+
+.dll-card-header {
+
+    padding: 28px 25px 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+}
+
+.dll-card-header h2 {
+
+    margin: 0 0 5px;
+
+    font-size: 26px;
+
+    color: #111827;
+
+}
+
+.dll-card-header p {
+
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+}
+
+.dll-status {
+
+    background: #f1f5f9;
+
+    color: #334155;
+
+    border-radius: 20px;
+
+    padding: 6px 13px;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================
+   CANVAS
+   ========================================= */
+
+.dll-canvas {
+
+    min-height: 420px;
+
+    padding: 25px;
+
+    overflow-x: auto;
+
+    position: relative;
+
+}
+
+.dll-head-label {
+
+    text-align: center;
+
+    font-weight: 700;
+
+    font-size: 15px;
+
+    color: #111827;
+
+    margin-top: 5px;
+
+}
+
+.dll-head-arrow {
+
+    text-align: center;
+
+    font-size: 25px;
+
+    line-height: 25px;
+
+    color: #111827;
+
+    margin-bottom: 35px;
+
+}
+
+
+/* =========================================
+   LIST
+   ========================================= */
+
+.dll-list {
+
+    min-height: 170px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 0;
+
+    width: max-content;
+
+    min-width: 100%;
+
+}
+
+.dll-empty {
+
+    color: #94a3b8;
+
+    font-size: 16px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================
+   NODE
+   ========================================= */
+
+.dll-node-wrapper {
+
+    display: flex;
+
+    align-items: center;
+
+    animation: dllNodeAppear 0.3s ease;
+
+}
+
+@keyframes dllNodeAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =========================================
+   NODE BOX
+   ========================================= */
+
+.dll-node {
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 105px;
+
+    border: 2px solid #111827;
+
+    border-radius: 8px;
+
+    background: white;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 12px rgba(15, 23, 42, 0.08);
+
+}
+
+.dll-node-top {
+
+    padding: 6px;
+
+    font-size: 11px;
+
+    color: #64748b;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    text-align: center;
+
+}
+
+.dll-node-data {
+
+    padding: 13px 8px;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+    text-align: center;
+
+    border-bottom: 1px solid #e2e8f0;
+
+}
+
+.dll-node-bottom {
+
+    padding: 6px;
+
+    font-size: 11px;
+
+    color: #64748b;
+
+    text-align: center;
+
+}
+
+
+/* =========================================
+   TWO WAY ARROW
+   ========================================= */
+
+.dll-arrow {
+
+    width: 55px;
+
+    text-align: center;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+}
+
+
+/* =========================================
+   OPERATIONS
+   ========================================= */
+
+.dll-operations-card {
+
+    padding: 25px;
+
+}
+
+.dll-operations-card h2 {
+
+    margin: 0 0 5px;
+
+    font-size: 26px;
+
+    color: #111827;
+
+}
+
+.dll-operation-subtitle {
+
+    margin: 0 0 20px;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+}
+
+.dll-operations-card label {
+
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #334155;
+
+    margin-bottom: 7px;
+
+}
+
+
+/* =========================================
+   INPUT
+   ========================================= */
+
+.dll-operations-card input {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px 13px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+
+}
+
+.dll-operations-card input:focus {
+
+    border-color: #111827;
+
+}
+
+
+/* =========================================
+   OPERATION GROUP
+   ========================================= */
+
+.dll-operation-group {
+
+    margin-bottom: 10px;
+
+    position: relative;
+
+}
+
+.dll-operation-toggle {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border: none;
+
+    background: #111827;
+
+    color: white;
+
+    padding: 12px 15px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+}
+
+.dll-operation-toggle:hover {
+
+    background: #020617;
+
+}
+
+
+/* =========================================
+   DROPDOWN
+   ========================================= */
+
+.dll-operation-menu {
+
+    display: none;
+
+    margin-top: 5px;
+
+    border: 1px solid #dbe1e8;
+
+    border-radius: 8px;
+
+    background: white;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 20px rgba(15, 23, 42, 0.08);
+
+}
+
+.dll-operation-menu.show {
+
+    display: block;
+
+}
+
+.dll-operation-menu button {
+
+    display: block;
+
+    width: 100%;
+
+    border: none;
+
+    background: white;
+
+    padding: 11px 14px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    color: #334155;
+
+    font-size: 13px;
+
+}
+
+.dll-operation-menu button:hover {
+
+    background: #f1f5f9;
+
+}
+
+
+/* =========================================
+   POSITION
+   ========================================= */
+
+.dll-position-container {
+
+    display: none;
+
+}
+
+.dll-position-container.show {
+
+    display: block;
+
+}
+
+
+/* =========================================
+   SELECTED OPERATION
+   ========================================= */
+
+.dll-selected-operation {
+
+    margin: 10px 0;
+
+    padding: 11px;
+
+    border: 1px solid #e2e8f0;
+
+    background: #f8fafc;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    color: #475569;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================
+   EXECUTE
+   ========================================= */
+
+.dll-execute-btn {
+
+    width: 100%;
+
+    border: none;
+
+    background: #111827;
+
+    color: white;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    margin-bottom: 8px;
+
+}
+
+.dll-execute-btn:hover {
+
+    background: #020617;
+
+}
+
+
+/* =========================================
+   SEARCH
+   ========================================= */
+
+.dll-secondary-btn {
+
+    width: 100%;
+
+    border: none;
+
+    background: #e5e7eb;
+
+    color: #111827;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+}
+
+.dll-secondary-btn:hover {
+
+    background: #dbe1e8;
+
+}
+
+
+/* =========================================
+   RESET
+   ========================================= */
+
+.dll-reset-btn {
+
+    width: 100%;
+
+    border: none;
+
+    background: #f1f3f5;
+
+    color: #334155;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+}
+
+.dll-reset-btn:hover {
+
+    background: #e5e7eb;
+
+}
+
+
+/* =========================================
+   MESSAGE
+   ========================================= */
+
+.dll-message {
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    min-height: 18px;
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 850px) {
+
+    .dll-viz-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .dll-viz-title-row {
+
+        flex-direction: column;
+
+    }
+
+    .dll-node-counter {
+
+        align-self: flex-start;
+
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .dll-viz-page {
+
+        padding: 25px 10px;
+
+    }
+
+    .dll-viz-title-row h1 {
+
+        font-size: 32px;
+
+    }
+
+    .dll-node {
+
+        width: 85px;
+
+    }
+
+    .dll-arrow {
+
+        width: 40px;
+
+        font-size: 18px;
+
+    }
+
+}

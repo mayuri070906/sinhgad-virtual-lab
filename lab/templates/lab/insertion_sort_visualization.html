@@ -1,0 +1,261 @@
+{% extends 'lab/base.html' %}
+{% load static %}
+
+{% block title %}
+Insertion Sort Visualization | Virtual Lab
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet"
+      href="{% static 'lab/css/insertion_sort_visualization.css' %}">
+
+<div class="is-visual-page">
+
+    <!-- HEADER -->
+
+    <div class="is-header">
+
+        <p class="small-title">
+            VIRTUAL LAB / SORTING / INSERTION SORT
+        </p>
+
+        <h1>
+            📝 Insertion Sort Visualization
+        </h1>
+
+        <p>
+            Watch key selection, comparisons,
+            shifting and insertion step by step.
+        </p>
+
+    </div>
+
+
+    <!-- CONTROLS -->
+
+    <div class="control-panel">
+
+        <div class="input-group">
+
+            <label for="arrayInput">
+                Enter Array
+            </label>
+
+            <input
+                type="text"
+                id="arrayInput"
+                value="40, 20, 30, 10, 50"
+                placeholder="40, 20, 30, 10">
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label for="orderSelect">
+                Sorting Order
+            </label>
+
+            <select id="orderSelect">
+
+                <option value="asc">
+                    Ascending ↑
+                </option>
+
+                <option value="desc">
+                    Descending ↓
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            id="setArrayBtn"
+            class="control-btn">
+
+            Set Array
+
+        </button>
+
+
+        <button
+            id="startBtn"
+            class="control-btn start-btn">
+
+            ▶ Start
+
+        </button>
+
+
+        <button
+            id="pauseBtn"
+            class="control-btn">
+
+            ⏸ Pause
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="control-btn">
+
+            ⏭ Next Step
+
+        </button>
+
+
+        <button
+            id="resetBtn"
+            class="control-btn reset-btn">
+
+            ↻ Reset
+
+        </button>
+
+    </div>
+
+
+    <!-- STATUS -->
+
+    <div class="status-card">
+
+        <div>
+
+            <span class="status-label">
+                Status
+            </span>
+
+            <strong id="statusText">
+                Ready
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span class="status-label">
+                Pass
+            </span>
+
+            <strong id="passText">
+                0
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span class="status-label">
+                Comparisons
+            </span>
+
+            <strong id="comparisonText">
+                0
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span class="status-label">
+                Shifts
+            </span>
+
+            <strong id="shiftText">
+                0
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- VISUALIZATION -->
+
+    <section class="visual-card">
+
+        <div class="visual-title">
+
+            <h2>
+                Array Visualization
+            </h2>
+
+            <p id="instructionText">
+                Click Start or Next Step to begin.
+            </p>
+
+        </div>
+
+
+        <div
+            id="arrayContainer"
+            class="array-container">
+        </div>
+
+
+        <!-- LEGEND -->
+
+        <div class="legend">
+
+            <div>
+                <span class="legend-box normal"></span>
+                Unsorted
+            </div>
+
+            <div>
+                <span class="legend-box sorted"></span>
+                Sorted
+            </div>
+
+            <div>
+                <span class="legend-box key"></span>
+                Key
+            </div>
+
+            <div>
+                <span class="legend-box compare"></span>
+                Comparing
+            </div>
+
+            <div>
+                <span class="legend-box shift"></span>
+                Shifting
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OPERATION -->
+
+    <section class="info-card">
+
+        <h2>
+            ⚙️ Current Operation
+        </h2>
+
+        <div
+            id="operationText"
+            class="operation-text">
+
+            Ready to perform Insertion Sort.
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="{% static 'lab/js/insertion_sort_visualization.js' %}">
+</script>
+
+{% endblock %}

@@ -1,0 +1,549 @@
+{% extends 'lab/base.html' %}
+{% load static %}
+
+{% block title %}
+Bubble Sort | Virtual Lab
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet"
+      href="{% static 'lab/css/bubble_sort.css' %}">
+
+
+<div class="bubble-page">
+
+    <!-- PAGE HEADER -->
+
+    <div class="page-header">
+
+        <p class="small-title">
+            VIRTUAL LAB / SORTING / BUBBLE SORT
+        </p>
+
+        <h1>
+            🫧 Bubble Sort
+        </h1>
+
+        <p>
+            Learn the complete concept, working,
+            algorithm, complexity and C implementation
+            of Bubble Sort.
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         WHAT IS BUBBLE SORT
+    ========================== -->
+
+    <section class="theory-section">
+
+        <h2>
+            📖 What is Bubble Sort?
+        </h2>
+
+        <p>
+            Bubble Sort is a simple comparison-based
+            sorting algorithm. It repeatedly compares
+            adjacent elements and swaps them if they
+            are in the wrong order.
+        </p>
+
+        <p>
+            After every pass, the largest unsorted
+            element moves to its correct position
+            at the end of the array.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         HOW BUBBLE SORT WORKS
+    ========================== -->
+
+    <section class="theory-section">
+
+        <h2>
+            ⚙️ How Bubble Sort Works
+        </h2>
+
+        <ol>
+
+            <li>
+                Start from the first element.
+            </li>
+
+            <li>
+                Compare the current element with
+                the next element.
+            </li>
+
+            <li>
+                If the current element is greater
+                than the next element, swap them.
+            </li>
+
+            <li>
+                Continue comparing adjacent elements.
+            </li>
+
+            <li>
+                After one complete pass, the largest
+                element reaches the end.
+            </li>
+
+            <li>
+                Repeat the process until the entire
+                array is sorted.
+            </li>
+
+        </ol>
+
+    </section>
+
+
+    <!-- =========================
+         EXAMPLE
+    ========================== -->
+
+    <section class="theory-section">
+
+        <h2>
+            🧩 Example
+        </h2>
+
+        <p>
+            Consider the following array:
+        </p>
+
+        <div class="array-box">
+
+            40 &nbsp; 10 &nbsp; 30 &nbsp; 20
+
+        </div>
+
+
+        <h3>
+            Pass 1
+        </h3>
+
+        <p>
+
+            Compare 40 and 10:
+
+            <strong>
+                40 &gt; 10
+            </strong>
+
+            → Swap
+
+        </p>
+
+        <div class="array-box">
+
+            10 &nbsp; 40 &nbsp; 30 &nbsp; 20
+
+        </div>
+
+
+        <p>
+
+            Compare 40 and 30:
+
+            <strong>
+                40 &gt; 30
+            </strong>
+
+            → Swap
+
+        </p>
+
+        <div class="array-box">
+
+            10 &nbsp; 30 &nbsp; 40 &nbsp; 20
+
+        </div>
+
+
+        <p>
+
+            Compare 40 and 20:
+
+            <strong>
+                40 &gt; 20
+            </strong>
+
+            → Swap
+
+        </p>
+
+        <div class="array-box">
+
+            10 &nbsp; 30 &nbsp; 20 &nbsp; 40
+
+        </div>
+
+
+        <p>
+            Now 40 is in its correct position.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         ALGORITHM
+    ========================== -->
+
+    <section class="theory-section">
+
+        <h2>
+            📝 Bubble Sort Algorithm
+        </h2>
+
+        <div class="algorithm-box">
+
+<pre>
+BubbleSort(array, n)
+
+    for i = 0 to n - 2
+
+        for j = 0 to n - i - 2
+
+            if array[j] &gt; array[j + 1]
+
+                swap(array[j], array[j + 1])
+
+            end if
+
+        end for
+
+    end for
+</pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PSEUDOCODE
+    ========================== -->
+
+    <section class="theory-section">
+
+        <h2>
+            💡 Pseudocode
+        </h2>
+
+        <div class="algorithm-box">
+
+<pre>
+for i = 0 to n-1
+
+    for j = 0 to n-i-2
+
+        if A[j] &gt; A[j+1]
+
+            swap A[j] and A[j+1]
+
+        end if
+
+    end for
+
+end for
+</pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         COMPLEXITY
+    ========================== -->
+
+    <section class="theory-section">
+
+        <h2>
+            ⏱ Time Complexity
+        </h2>
+
+        <table class="complexity-table">
+
+            <tr>
+
+                <th>
+                    Case
+                </th>
+
+                <th>
+                    Complexity
+                </th>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    Best Case
+                </td>
+
+                <td>
+                    O(n)
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    Average Case
+                </td>
+
+                <td>
+                    O(n²)
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    Worst Case
+                </td>
+
+                <td>
+                    O(n²)
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    Space Complexity
+                </td>
+
+                <td>
+                    O(1)
+                </td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- =========================
+         ADVANTAGES
+    ========================== -->
+
+    <section class="theory-section">
+
+        <h2>
+            ✅ Advantages
+        </h2>
+
+        <ul>
+
+            <li>
+                Easy to understand and implement.
+            </li>
+
+            <li>
+                Requires very little extra memory.
+            </li>
+
+            <li>
+                It is an in-place sorting algorithm.
+            </li>
+
+            <li>
+                Can be optimized for already sorted
+                arrays.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- =========================
+         DISADVANTAGES
+    ========================== -->
+
+    <section class="theory-section">
+
+        <h2>
+            ❌ Disadvantages
+        </h2>
+
+        <ul>
+
+            <li>
+                Slow for large datasets.
+            </li>
+
+            <li>
+                Average and worst-case complexity
+                is O(n²).
+            </li>
+
+            <li>
+                More comparisons are required
+                compared with efficient algorithms.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- =========================
+         APPLICATIONS
+    ========================== -->
+
+    <section class="theory-section">
+
+        <h2>
+            🌐 Applications
+        </h2>
+
+        <ul>
+
+            <li>
+                Educational purposes.
+            </li>
+
+            <li>
+                Small datasets.
+            </li>
+
+            <li>
+                Situations where simplicity is
+                more important than performance.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- =========================
+         C LANGUAGE
+    ========================== -->
+
+    <section class="theory-section">
+
+        <h2>
+            💻 C Language Implementation
+        </h2>
+
+        <p>
+            Complete Bubble Sort implementation
+            using C language.
+        </p>
+
+
+        <div class="code-box">
+
+<pre><code>#include &lt;stdio.h&gt;
+
+void bubbleSort(int arr[], int n)
+{
+    int i;
+    int j;
+    int temp;
+
+    for(i = 0; i &lt; n - 1; i++)
+    {
+        for(j = 0; j &lt; n - i - 1; j++)
+        {
+            if(arr[j] &gt; arr[j + 1])
+            {
+                temp = arr[j];
+
+                arr[j] = arr[j + 1];
+
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+
+int main()
+{
+    int arr[] = {
+        40, 10, 30, 20, 50
+    };
+
+    int n = 5;
+
+    int i;
+
+
+    bubbleSort(arr, n);
+
+
+    printf("Sorted Array: ");
+
+
+    for(i = 0; i &lt; n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+
+    return 0;
+}</code></pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         VISUALIZATION
+    ========================== -->
+
+    <section class="visualization-card">
+
+        <div>
+
+            <h2>
+                🧪 Bubble Sort Visualization
+            </h2>
+
+            <p>
+                Enter array values and watch Bubble
+                Sort compare and swap elements
+                step by step.
+            </p>
+
+        </div>
+
+
+        <a
+            href="{% url 'bubble_sort_visualization' %}"
+            class="visualization-btn">
+
+            Open Visualization →
+
+        </a>
+
+    </section>
+
+
+</div>
+
+
+<script src="{% static 'lab/js/bubble_sort.js' %}">
+</script>
+
+{% endblock %}

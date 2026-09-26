@@ -1,0 +1,306 @@
+{% extends 'lab/base.html' %}
+{% load static %}
+
+{% block title %}
+Singly Linked List Visualization
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet"
+      href="{% static 'lab/css/sll_visulization.css' %}">
+
+
+<div class="sll-visual-page">
+
+    <!-- TOP HEADER -->
+
+    <div class="visual-header">
+
+        <div>
+
+            <div class="breadcrumb">
+                Data Structures / Singly Linked List
+            </div>
+
+            <h1>
+                Singly Linked List
+            </h1>
+
+            <p>
+                Learn and visualize insertion,
+                deletion and searching operations.
+            </p>
+
+        </div>
+
+        <div class="node-counter">
+
+            Nodes:
+            <strong id="node-count">0</strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAIN AREA -->
+
+    <div class="visual-layout">
+
+
+        <!-- VISUALIZATION -->
+
+        <div class="visual-card">
+
+            <div class="card-top">
+
+                <div>
+
+                    <h2>
+                        Visualization
+                    </h2>
+
+                    <p>
+                        Singly linked list structure
+                    </p>
+
+                </div>
+
+                <span class="status" id="status">
+                    Ready
+                </span>
+
+            </div>
+
+
+            <div class="list-area">
+
+                <div class="head-label">
+                    HEAD
+                </div>
+
+                <div class="head-arrow">
+                    ↓
+                </div>
+
+                <div id="linked-list"
+                     class="linked-list">
+
+                    <div class="empty-message">
+                        Linked List is empty
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- OPERATIONS -->
+
+        <div class="operation-card">
+
+            <h2>
+                Operations
+            </h2>
+
+            <p class="operation-subtitle">
+                Enter value and select an operation.
+            </p>
+
+
+            <!-- VALUE -->
+
+            <label for="value-input">
+                Value
+            </label>
+
+            <input
+                type="number"
+                id="value-input"
+                placeholder="Enter value"
+            >
+
+
+            <!-- INSERT DROPDOWN -->
+
+            <div class="dropdown">
+
+                <button
+                    type="button"
+                    class="dropdown-button"
+                    id="insert-dropdown-btn">
+
+                    <span>
+                        Insert
+                    </span>
+
+                    <span>
+                        ▼
+                    </span>
+
+                </button>
+
+                <div
+                    class="dropdown-menu"
+                    id="insert-menu">
+
+                    <button
+                        type="button"
+                        data-operation="insertBegin">
+
+                        Begin Insert
+
+                    </button>
+
+                    <button
+                        type="button"
+                        data-operation="insertEnd">
+
+                        End Insert
+
+                    </button>
+
+                    <button
+                        type="button"
+                        data-operation="insertLocation">
+
+                        Location Insert
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- DELETE DROPDOWN -->
+
+            <div class="dropdown">
+
+                <button
+                    type="button"
+                    class="dropdown-button"
+                    id="delete-dropdown-btn">
+
+                    <span>
+                        Delete
+                    </span>
+
+                    <span>
+                        ▼
+                    </span>
+
+                </button>
+
+                <div
+                    class="dropdown-menu"
+                    id="delete-menu">
+
+                    <button
+                        type="button"
+                        data-operation="deleteBegin">
+
+                        Begin Delete
+
+                    </button>
+
+                    <button
+                        type="button"
+                        data-operation="deleteEnd">
+
+                        End Delete
+
+                    </button>
+
+                    <button
+                        type="button"
+                        data-operation="deleteLocation">
+
+                        Location Delete
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOCATION -->
+
+            <div
+                id="position-group"
+                class="position-group hidden">
+
+                <label for="position-input">
+                    Position
+                </label>
+
+                <input
+                    type="number"
+                    id="position-input"
+                    min="1"
+                    placeholder="Enter position"
+                >
+
+            </div>
+
+
+            <!-- EXECUTE -->
+
+            <button
+                type="button"
+                id="execute-btn"
+                class="execute-btn">
+
+                Execute
+
+            </button>
+
+
+            <!-- SEARCH -->
+
+            <button
+                type="button"
+                id="search-btn"
+                class="secondary-btn">
+
+                🔍 Search
+
+            </button>
+
+
+            <!-- RESET -->
+
+            <button
+                type="button"
+                id="reset-btn"
+                class="reset-btn">
+
+                ↻ Reset
+
+            </button>
+
+
+            <!-- MESSAGE -->
+
+            <div
+                id="operation-message"
+                class="operation-message">
+
+                No operation selected
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="{% static 'lab/js/sll_visulization.js' %}"></script>
+
+{% endblock %}

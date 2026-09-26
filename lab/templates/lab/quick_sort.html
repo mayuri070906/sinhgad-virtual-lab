@@ -1,0 +1,524 @@
+{% extends 'lab/base.html' %}
+{% load static %}
+
+{% block title %}
+Quick Sort | Virtual Lab
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet"
+      href="{% static 'lab/css/quick_sort.css' %}">
+
+<div class="quick-page">
+
+    <!-- HEADER -->
+
+    <div class="page-header">
+
+        <p class="small-title">
+            VIRTUAL LAB / SORTING / QUICK SORT
+        </p>
+
+        <h1>
+            ⚡ Quick Sort
+        </h1>
+
+        <p>
+            Learn the complete concept, working,
+            algorithm, complexity and C implementation
+            of Quick Sort.
+        </p>
+
+    </div>
+
+
+    <!-- THEORY -->
+
+    <section class="theory-section">
+
+        <h2>📖 What is Quick Sort?</h2>
+
+        <p>
+            Quick Sort is a divide-and-conquer sorting
+            algorithm. It selects an element called a
+            pivot and rearranges the array so that elements
+            smaller than the pivot are placed on one side
+            and elements greater than the pivot are placed
+            on the other side.
+        </p>
+
+        <p>
+            The same process is then recursively applied
+            to the left and right portions of the array.
+        </p>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="theory-section">
+
+        <h2>🧠 How Quick Sort Works?</h2>
+
+        <ol>
+
+            <li>
+                Select an element as the <strong>pivot</strong>.
+            </li>
+
+            <li>
+                Partition the array around the pivot.
+            </li>
+
+            <li>
+                Elements smaller than the pivot go to the
+                left side.
+            </li>
+
+            <li>
+                Elements greater than the pivot go to the
+                right side.
+            </li>
+
+            <li>
+                Recursively apply Quick Sort to both sides.
+            </li>
+
+        </ol>
+
+    </section>
+
+
+    <!-- PIVOT -->
+
+    <section class="theory-section">
+
+        <h2>🎯 Pivot</h2>
+
+        <p>
+            A pivot is the element used to divide the
+            array during partitioning.
+        </p>
+
+        <p>
+            In this Virtual Lab, the
+            <strong>last element</strong> is selected
+            as the pivot.
+        </p>
+
+        <div class="array-box">
+
+            40 &nbsp; 20 &nbsp; 30 &nbsp; 10 &nbsp;
+            <span class="pivot-value">50</span>
+
+        </div>
+
+        <p>
+            Here, <strong>50</strong> is the pivot.
+        </p>
+
+    </section>
+
+
+    <!-- EXAMPLE -->
+
+    <section class="theory-section">
+
+        <h2>🧩 Example</h2>
+
+        <p>
+            Consider:
+        </p>
+
+        <div class="array-box">
+            40 &nbsp; 20 &nbsp; 30 &nbsp; 10 &nbsp; 50
+        </div>
+
+        <h3>Step 1 — Select Pivot</h3>
+
+        <p>
+            Last element 50 is selected as pivot.
+        </p>
+
+        <div class="array-box">
+            40 &nbsp; 20 &nbsp; 30 &nbsp; 10 &nbsp;
+            <span class="pivot-value">50</span>
+        </div>
+
+        <h3>Step 2 — Partition</h3>
+
+        <p>
+            Since all elements are smaller than 50,
+            they remain on the left side.
+        </p>
+
+        <div class="array-box">
+            40 &nbsp; 20 &nbsp; 30 &nbsp; 10
+            &nbsp; | &nbsp; 50
+        </div>
+
+        <h3>Step 3 — Recursively Sort</h3>
+
+        <div class="array-box">
+            10 &nbsp; 20 &nbsp; 30 &nbsp; 40
+            &nbsp; 50
+        </div>
+
+    </section>
+
+
+    <!-- ALGORITHM -->
+
+    <section class="theory-section">
+
+        <h2>📝 Quick Sort Algorithm</h2>
+
+        <div class="algorithm-box">
+
+<pre>
+QuickSort(A, low, high)
+
+    if low &lt; high
+
+        pivotIndex =
+            Partition(A, low, high)
+
+        QuickSort(
+            A,
+            low,
+            pivotIndex - 1
+        )
+
+        QuickSort(
+            A,
+            pivotIndex + 1,
+            high
+        )
+
+    end if
+</pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- PARTITION -->
+
+    <section class="theory-section">
+
+        <h2>🔀 Partition Algorithm</h2>
+
+        <div class="algorithm-box">
+
+<pre>
+Partition(A, low, high)
+
+    pivot = A[high]
+
+    i = low - 1
+
+    for j = low to high - 1
+
+        if A[j] &lt; pivot
+
+            i++
+
+            swap A[i] and A[j]
+
+        end if
+
+    end for
+
+    swap A[i + 1] and A[high]
+
+    return i + 1
+</pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMPLEXITY -->
+
+    <section class="theory-section">
+
+        <h2>⏱ Time & Space Complexity</h2>
+
+        <table class="complexity-table">
+
+            <tr>
+                <th>Case</th>
+                <th>Time Complexity</th>
+            </tr>
+
+            <tr>
+                <td>Best Case</td>
+                <td>O(n log n)</td>
+            </tr>
+
+            <tr>
+                <td>Average Case</td>
+                <td>O(n log n)</td>
+            </tr>
+
+            <tr>
+                <td>Worst Case</td>
+                <td>O(n²)</td>
+            </tr>
+
+            <tr>
+                <td>Space Complexity</td>
+                <td>O(log n) Average</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- ADVANTAGES -->
+
+    <section class="theory-section">
+
+        <h2>✅ Advantages</h2>
+
+        <ul>
+
+            <li>
+                Efficient for large datasets.
+            </li>
+
+            <li>
+                Average time complexity is O(n log n).
+            </li>
+
+            <li>
+                Requires relatively small additional memory.
+            </li>
+
+            <li>
+                Works well with arrays.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- DISADVANTAGES -->
+
+    <section class="theory-section">
+
+        <h2>❌ Disadvantages</h2>
+
+        <ul>
+
+            <li>
+                Worst-case complexity is O(n²).
+            </li>
+
+            <li>
+                Poor pivot selection can reduce performance.
+            </li>
+
+            <li>
+                Quick Sort is generally not stable.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- C CODE -->
+
+    <section class="theory-section">
+
+        <h2>💻 C Language Implementation</h2>
+
+        <p>
+            Complete Quick Sort implementation
+            using C language.
+        </p>
+
+        <div class="code-box">
+
+<pre><code>#include &lt;stdio.h&gt;
+
+
+void swap(
+    int *a,
+    int *b
+)
+{
+    int temp = *a;
+
+    *a = *b;
+
+    *b = temp;
+}
+
+
+int partition(
+    int arr[],
+    int low,
+    int high
+)
+{
+    int pivot =
+        arr[high];
+
+    int i =
+        low - 1;
+
+
+    for(
+        int j = low;
+        j &lt; high;
+        j++
+    )
+    {
+        if(
+            arr[j] &lt; pivot
+        )
+        {
+            i++;
+
+            swap(
+                &amp;arr[i],
+                &amp;arr[j]
+            );
+        }
+    }
+
+
+    swap(
+        &amp;arr[i + 1],
+        &amp;arr[high]
+    );
+
+
+    return i + 1;
+}
+
+
+void quickSort(
+    int arr[],
+    int low,
+    int high
+)
+{
+    if(
+        low &lt; high
+    )
+    {
+        int pivotIndex =
+            partition(
+                arr,
+                low,
+                high
+            );
+
+
+        quickSort(
+            arr,
+            low,
+            pivotIndex - 1
+        );
+
+
+        quickSort(
+            arr,
+            pivotIndex + 1,
+            high
+        );
+    }
+}
+
+
+int main()
+{
+    int arr[] = {
+        40,
+        20,
+        30,
+        10,
+        50
+    };
+
+
+    int n = 5;
+
+
+    quickSort(
+        arr,
+        0,
+        n - 1
+    );
+
+
+    printf(
+        "Sorted Array: "
+    );
+
+
+    for(
+        int i = 0;
+        i &lt; n;
+        i++
+    )
+    {
+        printf(
+            "%d ",
+            arr[i]
+        );
+    }
+
+
+    return 0;
+}</code></pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- VISUALIZATION -->
+
+    <section class="visualization-card">
+
+        <div>
+
+            <h2>
+                🧪 Quick Sort Visualization
+            </h2>
+
+            <p>
+                Visualize pivot selection,
+                partitioning, comparisons and
+                recursive sorting step by step.
+            </p>
+
+        </div>
+
+        <a
+            href="{% url 'quick_sort_visualization' %}"
+            class="visualization-btn">
+
+            Open Visualization →
+
+        </a>
+
+    </section>
+
+</div>
+
+
+<script src="{% static 'lab/js/quick_sort.js' %}">
+</script>
+
+{% endblock %}

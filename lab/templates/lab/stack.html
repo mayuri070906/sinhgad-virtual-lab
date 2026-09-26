@@ -1,0 +1,238 @@
+{% extends 'lab/base.html' %}
+{% load static %}
+
+{% block title %}
+Stack Virtual Lab
+{% endblock %}
+
+{% block content %}
+
+<div class="stack-lab">
+
+    <!-- HEADER -->
+
+    <div class="stack-header">
+
+        <p class="small-title">
+            DATA STRUCTURE EXPERIMENT
+        </p>
+
+        <h1>Stack Virtual Lab</h1>
+
+        <p>
+            Visualize Stack operations using
+            the LIFO principle.
+        </p>
+
+    </div>
+
+
+    <!-- MAIN LAB -->
+
+    <div class="stack-workspace">
+
+
+        <!-- LEFT: THEORY -->
+
+        <div class="stack-panel theory-panel">
+
+            <h2>📘 Stack</h2>
+
+            <p>
+                A Stack is a linear data structure
+                that follows the
+                <strong>LIFO</strong> principle.
+            </p>
+
+            <div class="principle">
+
+                <span>LIFO</span>
+
+                <small>
+                    Last In, First Out
+                </small>
+
+            </div>
+
+
+            <h3>Operations</h3>
+
+            <ul>
+                <li>
+                    <strong>Push</strong> -
+                    Add an element
+                </li>
+
+                <li>
+                    <strong>Pop</strong> -
+                    Remove the top element
+                </li>
+
+                <li>
+                    <strong>Peek</strong> -
+                    View the top element
+                </li>
+            </ul>
+
+        </div>
+
+
+        <!-- CENTER: VISUALIZATION -->
+
+        <div class="stack-panel visualization-panel">
+
+            <div class="visualization-title">
+
+                <h2>Stack Visualization</h2>
+
+                <span id="stack-size">
+                    Size: 0
+                </span>
+
+            </div>
+
+
+            <div class="stack-area">
+
+                <div class="top-label">
+
+                    <span>TOP</span>
+
+                    <span class="arrow">
+                        ↓
+                    </span>
+
+                </div>
+
+
+                <div id="stack-container">
+
+                    <div class="empty-stack">
+                        Stack is empty
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT: CONTROLS -->
+
+        <div class="stack-panel controls-panel">
+
+            <h2>⚙ Operations</h2>
+
+            <label>
+                Enter value
+            </label>
+
+            <input
+                type="number"
+                id="stack-input"
+                placeholder="Example: 10"
+            >
+
+
+            <button
+                class="operation-btn push-btn"
+                onclick="pushElement()">
+
+                ⬆ Push
+
+            </button>
+
+
+            <button
+                class="operation-btn pop-btn"
+                onclick="popElement()">
+
+                ⬇ Pop
+
+            </button>
+
+
+            <button
+                class="operation-btn peek-btn"
+                onclick="peekElement()">
+
+                👁 Peek
+
+            </button>
+
+
+            <button
+                class="operation-btn reset-btn"
+                onclick="resetStack()">
+
+                ↻ Reset
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- OUTPUT -->
+
+    <div class="stack-panel output-panel">
+
+        <div class="output-heading">
+
+            <h2>Console Output</h2>
+
+            <span id="status">
+                Ready
+            </span>
+
+        </div>
+
+        <div id="output">
+            Ready to perform an operation...
+        </div>
+
+    </div>
+
+
+    <!-- C CODE -->
+
+    <div class="stack-panel code-panel">
+
+        <h2>💻 C Implementation</h2>
+
+<pre><code>#define MAX 5
+
+int stack[MAX];
+int top = -1;
+
+void push(int value)
+{
+    if(top == MAX - 1)
+    {
+        printf("Stack Overflow");
+    }
+    else
+    {
+        stack[++top] = value;
+    }
+}
+
+void pop()
+{
+    if(top == -1)
+    {
+        printf("Stack Underflow");
+    }
+    else
+    {
+        top--;
+    }
+}</code></pre>
+
+    </div>
+
+</div>
+
+{% endblock %}

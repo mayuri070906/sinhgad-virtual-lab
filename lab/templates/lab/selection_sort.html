@@ -1,0 +1,450 @@
+{% extends 'lab/base.html' %}
+{% load static %}
+
+{% block title %}
+Selection Sort | Virtual Lab
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet"
+      href="{% static 'lab/css/selection_sort.css' %}">
+
+<div class="selection-page">
+
+    <!-- HEADER -->
+
+    <div class="page-header">
+
+        <p class="small-title">
+            VIRTUAL LAB / SORTING / SELECTION SORT
+        </p>
+
+        <h1>
+            🎯 Selection Sort
+        </h1>
+
+        <p>
+            Learn the complete concept, working,
+            algorithm, complexity and C implementation
+            of Selection Sort.
+        </p>
+
+    </div>
+
+
+    <!-- WHAT IS SELECTION SORT -->
+
+    <section class="theory-section">
+
+        <h2>
+            📖 What is Selection Sort?
+        </h2>
+
+        <p>
+            Selection Sort is a comparison-based sorting
+            algorithm. It repeatedly selects the smallest
+            element from the unsorted portion of the array
+            and places it at the beginning of that portion.
+        </p>
+
+        <p>
+            In ascending order, the smallest element is
+            selected in every pass and moved to its correct
+            position.
+        </p>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="theory-section">
+
+        <h2>
+            ⚙️ How Selection Sort Works
+        </h2>
+
+        <ol>
+
+            <li>
+                Start from the first element.
+            </li>
+
+            <li>
+                Assume the first unsorted element is the
+                minimum.
+            </li>
+
+            <li>
+                Compare it with all remaining unsorted
+                elements.
+            </li>
+
+            <li>
+                Find the smallest element.
+            </li>
+
+            <li>
+                Swap the smallest element with the first
+                element of the unsorted portion.
+            </li>
+
+            <li>
+                Move to the next position and repeat.
+            </li>
+
+            <li>
+                Continue until the complete array is sorted.
+            </li>
+
+        </ol>
+
+    </section>
+
+
+    <!-- EXAMPLE -->
+
+    <section class="theory-section">
+
+        <h2>
+            🧩 Example
+        </h2>
+
+        <p>
+            Consider the following array:
+        </p>
+
+        <div class="array-box">
+            40 &nbsp; 10 &nbsp; 30 &nbsp; 20
+        </div>
+
+        <h3>
+            Pass 1
+        </h3>
+
+        <p>
+            The smallest element is
+            <strong>10</strong>.
+            Swap 10 with 40.
+        </p>
+
+        <div class="array-box">
+            10 &nbsp; 40 &nbsp; 30 &nbsp; 20
+        </div>
+
+
+        <h3>
+            Pass 2
+        </h3>
+
+        <p>
+            From the remaining elements,
+            the smallest is <strong>20</strong>.
+        </p>
+
+        <div class="array-box">
+            10 &nbsp; 20 &nbsp; 30 &nbsp; 40
+        </div>
+
+
+        <h3>
+            Pass 3
+        </h3>
+
+        <p>
+            The remaining elements are already
+            in the correct order.
+        </p>
+
+        <div class="array-box">
+            10 &nbsp; 20 &nbsp; 30 &nbsp; 40
+        </div>
+
+    </section>
+
+
+    <!-- ALGORITHM -->
+
+    <section class="theory-section">
+
+        <h2>
+            📝 Selection Sort Algorithm
+        </h2>
+
+        <div class="algorithm-box">
+
+<pre>
+SelectionSort(array, n)
+
+    for i = 0 to n - 2
+
+        minIndex = i
+
+        for j = i + 1 to n - 1
+
+            if array[j] &lt; array[minIndex]
+
+                minIndex = j
+
+            end if
+
+        end for
+
+        swap(
+            array[i],
+            array[minIndex]
+        )
+
+    end for
+</pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- PSEUDOCODE -->
+
+    <section class="theory-section">
+
+        <h2>
+            💡 Pseudocode
+        </h2>
+
+        <div class="algorithm-box">
+
+<pre>
+for i = 0 to n-2
+
+    minIndex = i
+
+    for j = i+1 to n-1
+
+        if A[j] &lt; A[minIndex]
+
+            minIndex = j
+
+        end if
+
+    end for
+
+    swap A[i] and A[minIndex]
+
+end for
+</pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMPLEXITY -->
+
+    <section class="theory-section">
+
+        <h2>
+            ⏱ Time Complexity
+        </h2>
+
+        <table class="complexity-table">
+
+            <tr>
+                <th>Case</th>
+                <th>Complexity</th>
+            </tr>
+
+            <tr>
+                <td>Best Case</td>
+                <td>O(n²)</td>
+            </tr>
+
+            <tr>
+                <td>Average Case</td>
+                <td>O(n²)</td>
+            </tr>
+
+            <tr>
+                <td>Worst Case</td>
+                <td>O(n²)</td>
+            </tr>
+
+            <tr>
+                <td>Space Complexity</td>
+                <td>O(1)</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- ADVANTAGES -->
+
+    <section class="theory-section">
+
+        <h2>
+            ✅ Advantages
+        </h2>
+
+        <ul>
+
+            <li>
+                Easy to understand and implement.
+            </li>
+
+            <li>
+                Requires O(1) extra space.
+            </li>
+
+            <li>
+                Performs fewer swaps than Bubble Sort.
+            </li>
+
+            <li>
+                Suitable for small datasets.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- DISADVANTAGES -->
+
+    <section class="theory-section">
+
+        <h2>
+            ❌ Disadvantages
+        </h2>
+
+        <ul>
+
+            <li>
+                Time complexity is O(n²).
+            </li>
+
+            <li>
+                Not efficient for large datasets.
+            </li>
+
+            <li>
+                Performs many comparisons even when
+                the array is already sorted.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- C LANGUAGE -->
+
+    <section class="theory-section">
+
+        <h2>
+            💻 C Language Implementation
+        </h2>
+
+        <p>
+            Complete Selection Sort implementation
+            using C language.
+        </p>
+
+        <div class="code-box">
+
+<pre><code>#include &lt;stdio.h&gt;
+
+void selectionSort(int arr[], int n)
+{
+    int i;
+    int j;
+    int minIndex;
+    int temp;
+
+    for(i = 0; i &lt; n - 1; i++)
+    {
+        minIndex = i;
+
+        for(j = i + 1; j &lt; n; j++)
+        {
+            if(arr[j] &lt; arr[minIndex])
+            {
+                minIndex = j;
+            }
+        }
+
+        temp = arr[i];
+
+        arr[i] = arr[minIndex];
+
+        arr[minIndex] = temp;
+    }
+}
+
+
+int main()
+{
+    int arr[] = {
+        40, 10, 30, 20, 50
+    };
+
+    int n = 5;
+
+    int i;
+
+
+    selectionSort(arr, n);
+
+
+    printf("Sorted Array: ");
+
+
+    for(i = 0; i &lt; n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+
+    return 0;
+}</code></pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- VISUALIZATION -->
+
+    <section class="visualization-card">
+
+        <div>
+
+            <h2>
+                🧪 Selection Sort Visualization
+            </h2>
+
+            <p>
+                Visualize minimum selection,
+                comparisons and swaps step by step.
+            </p>
+
+        </div>
+
+        <a
+            href="{% url 'selection_sort_visualization' %}"
+            class="visualization-btn">
+
+            Open Visualization →
+
+        </a>
+
+    </section>
+
+</div>
+
+
+<script src="{% static 'lab/js/selection_sort.js' %}">
+</script>
+
+{% endblock %}

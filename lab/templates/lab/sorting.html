@@ -1,0 +1,272 @@
+{% extends 'lab/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Sorting Algorithms | Virtual Lab
+{% endblock %}
+
+
+{% block content %}
+
+<link rel="stylesheet"
+      href="{% static 'lab/css/sorting.css' %}">
+
+
+<div class="sorting-page">
+
+
+    <!-- =====================================
+         PAGE HEADER
+    ====================================== -->
+
+    <div class="sorting-header">
+
+        <p class="small-title">
+            VIRTUAL LAB / SORTING
+        </p>
+
+        <h1>
+            🔃 Sorting Algorithms
+        </h1>
+
+        <p>
+            Explore different sorting algorithms,
+            understand their working and visualize
+            them step by step.
+        </p>
+
+    </div>
+
+
+    <!-- =====================================
+         SORTING ALGORITHM GRID
+    ====================================== -->
+
+    <div class="sorting-grid">
+
+
+        <!-- =================================
+             BUBBLE SORT
+        ================================== -->
+
+        <div class="sorting-card">
+
+            <div class="sorting-icon">
+                🫧
+            </div>
+
+            <h2>
+                Bubble Sort
+            </h2>
+
+            <p>
+                Learn how adjacent elements are
+                repeatedly compared and swapped
+                until the array is sorted.
+            </p>
+
+            <div class="algorithm-info">
+
+                <span>
+                    O(n²)
+                </span>
+
+                <span>
+                    Comparison
+                </span>
+
+            </div>
+
+            <a
+                href="{% url 'bubble_sort' %}"
+                class="primary-btn">
+
+                Learn Bubble Sort →
+
+            </a>
+
+        </div>
+
+
+        <!-- =================================
+             SELECTION SORT
+        ================================== -->
+
+        <div class="sorting-card">
+
+            <div class="sorting-icon">
+                🎯
+            </div>
+
+            <h2>
+                Selection Sort
+            </h2>
+
+            <p>
+                Learn how the minimum element is
+                selected from the unsorted part and
+                placed at the correct position.
+            </p>
+
+            <div class="algorithm-info">
+
+                <span>
+                    O(n²)
+                </span>
+
+                <span>
+                    Selection
+                </span>
+
+            </div>
+
+            <a
+                href="{% url 'selection_sort' %}"
+                class="primary-btn">
+
+                Learn Selection Sort →
+
+            </a>
+
+        </div>
+
+
+        <!-- =================================
+             INSERTION SORT
+        ================================== -->
+
+        <div class="sorting-card">
+
+            <div class="sorting-icon">
+                📥
+            </div>
+
+            <h2>
+                Insertion Sort
+            </h2>
+
+            <p>
+                Learn how each element is inserted
+                into its correct position in the
+                sorted portion of the array.
+            </p>
+
+            <div class="algorithm-info">
+
+                <span>
+                    O(n²)
+                </span>
+
+                <span>
+                    Insertion
+                </span>
+
+            </div>
+
+            <a
+                href="{% url 'insertion_sort' %}"
+                class="primary-btn">
+
+                Learn Insertion Sort →
+
+            </a>
+
+        </div>
+
+
+        <!-- =================================
+             MERGE SORT
+        ================================== -->
+
+        <div class="sorting-card">
+
+            <div class="sorting-icon">
+                🔀
+            </div>
+
+            <h2>
+                Merge Sort
+            </h2>
+
+            <p>
+                Learn the divide and conquer
+                technique by dividing the array
+                and merging sorted parts.
+            </p>
+
+            <div class="algorithm-info">
+
+                <span>
+                    O(n log n)
+                </span>
+
+                <span>
+                    Divide & Conquer
+                </span>
+
+            </div>
+
+            <a
+                href="{% url 'merge_sort' %}"
+                class="primary-btn">
+
+                Learn Merge Sort →
+
+            </a>
+
+        </div>
+
+
+        <!-- =================================
+             QUICK SORT
+        ================================== -->
+
+        <div class="sorting-card">
+
+            <div class="sorting-icon">
+                ⚡
+            </div>
+
+            <h2>
+                Quick Sort
+            </h2>
+
+            <p>
+                Learn how a pivot is selected and
+                the array is partitioned around
+                the pivot element.
+            </p>
+
+            <div class="algorithm-info">
+
+                <span>
+                    O(n log n)
+                </span>
+
+                <span>
+                    Pivot
+                </span>
+
+            </div>
+
+            <a
+                href="{% url 'quick_sort' %}"
+                class="primary-btn">
+
+                Learn Quick Sort →
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<script src="{% static 'lab/js/sorting.js' %}">
+</script>
+
+{% endblock %}

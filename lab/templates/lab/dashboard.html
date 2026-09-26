@@ -1,0 +1,108 @@
+{% extends 'lab/base.html' %}
+
+{% block title %}
+Dashboard - Virtual Lab
+{% endblock %}
+
+{% block content %}
+
+<div class="page-container">
+
+    <div class="page-header">
+
+        <p class="small-title">
+            VIRTUAL LAB
+        </p>
+
+        <h1>
+            Dashboard
+        </h1>
+
+        <p>
+            Choose an experiment to start learning.
+        </p>
+
+    </div>
+
+
+    <div class="structure-grid">
+
+        <div class="structure-card">
+
+            <div class="card-icon">
+                📚
+            </div>
+
+            <h2>
+                Data Structures
+            </h2>
+
+            <p>
+                Explore different data structures
+                and their operations.
+            </p>
+
+            <a href="{% url 'data_structures' %}"
+               class="primary-btn">
+
+                Explore →
+
+            </a>
+
+        </div>
+
+
+        <div class="structure-card">
+
+            <div class="card-icon">
+                💻
+            </div>
+
+            <h2>
+                C Programming
+            </h2>
+
+            <p>
+                Learn how data structures are
+                implemented using C.
+            </p>
+
+            <a href="{% url 'data_structures' %}"
+               class="primary-btn">
+
+                Start →
+
+            </a>
+
+        </div>
+
+
+        <div class="structure-card">
+
+            <div class="card-icon">
+                🧠
+            </div>
+
+            <h2>
+                Practice
+            </h2>
+
+            <p>
+                Practice operations and improve
+                your understanding.
+            </p>
+
+            <a href="{% url 'data_structures' %}"
+               class="primary-btn">
+
+                Practice →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

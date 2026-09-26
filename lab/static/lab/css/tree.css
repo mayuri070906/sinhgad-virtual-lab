@@ -1,0 +1,304 @@
+/* =================================
+   TREE THEORY PAGE
+================================= */
+
+.tree-page {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+
+/* PAGE HEADER */
+
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.small-title {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+.page-header h1 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.page-header p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* THEORY */
+
+.theory-section {
+    background: #ffffff;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.theory-section h2 {
+    margin-top: 0;
+    font-size: 28px;
+}
+
+.theory-section h3 {
+    margin-top: 25px;
+    font-size: 21px;
+}
+
+.theory-section p {
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.theory-section li {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+
+/* TREE DIAGRAM */
+
+.tree-diagram {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.tree-node {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 55px;
+    height: 55px;
+
+    border: 2px solid #333;
+    border-radius: 50%;
+
+    font-weight: bold;
+    margin: 8px;
+}
+
+.tree-lines {
+    font-size: 25px;
+}
+
+.tree-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+/* BST EXAMPLE */
+
+.bst-example {
+    background: #f5f5f5;
+    padding: 25px;
+    border-radius: 12px;
+    overflow-x: auto;
+}
+
+.bst-example pre {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+
+/* FORMULA */
+
+.formula-box {
+    padding: 18px;
+    margin: 15px 0;
+
+    background: #f4f4f4;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* SUB TOPIC */
+
+.sub-topic {
+    margin: 25px 0;
+    padding: 20px;
+
+    border-left: 4px solid #555;
+
+    background: #fafafa;
+
+    border-radius: 8px;
+}
+
+
+/* TABLE */
+
+.complexity-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.complexity-table th,
+.complexity-table td {
+    border: 1px solid #ddd;
+    padding: 14px;
+    text-align: center;
+}
+
+.complexity-table th {
+    font-weight: bold;
+}
+
+
+/* CODE */
+
+.code-box {
+    background: #1e1e1e;
+    color: #f5f5f5;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    overflow-x: auto;
+
+    margin-top: 15px;
+}
+
+.code-box pre {
+    margin: 0;
+
+    font-family: Consolas, monospace;
+
+    line-height: 1.6;
+}
+
+
+/* B TREE */
+
+.b-tree-example {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.b-node {
+    display: inline-block;
+
+    padding: 15px 22px;
+
+    border: 2px solid #333;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    margin: 8px;
+}
+
+.b-children {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+/* VISUALIZATION CARD */
+
+.visualization-card {
+    margin-top: 30px;
+
+    padding: 25px;
+
+    border-radius: 14px;
+
+    background: #f5f5f5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.visualization-card h3 {
+    margin-top: 0;
+}
+
+.visualization-card p {
+    margin-bottom: 0;
+}
+
+
+/* BUTTON */
+
+.visualization-btn {
+    display: inline-block;
+
+    padding: 13px 22px;
+
+    background: #222;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: 0.2s;
+}
+
+.visualization-btn:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.85;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .tree-page {
+        width: 94%;
+    }
+
+    .page-header h1 {
+        font-size: 32px;
+    }
+
+    .theory-section {
+        padding: 20px;
+    }
+
+    .visualization-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .complexity-table {
+        font-size: 14px;
+    }
+
+}

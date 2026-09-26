@@ -1,0 +1,672 @@
+{% extends 'lab/base.html' %}
+{% load static %}
+
+{% block title %}
+Trees | Virtual Lab
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet"
+      href="{% static 'lab/css/tree.css' %}">
+
+<div class="tree-page">
+
+    <!-- PAGE HEADER -->
+
+    <div class="page-header">
+
+        <p class="small-title">
+            VIRTUAL LAB / DATA STRUCTURES / TREES
+        </p>
+
+        <h1>
+            🌳 Trees
+        </h1>
+
+        <p>
+            Learn the complete concept, types,
+            traversals, Binary Search Tree, B Tree
+            and B+ Tree.
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         WHAT IS TREE
+    ========================== -->
+
+    <section class="theory-section">
+
+        <h2>📖 What is a Tree?</h2>
+
+        <p>
+            A Tree is a non-linear data structure
+            that represents hierarchical relationships
+            between elements.
+        </p>
+
+        <p>
+            A tree consists of nodes connected by edges.
+            The first node is called the root node.
+        </p>
+
+        <div class="tree-diagram">
+            <div class="tree-node">A</div>
+
+            <div class="tree-lines">
+                ↓
+            </div>
+
+            <div class="tree-row">
+                <div class="tree-node">B</div>
+                <div class="tree-node">C</div>
+            </div>
+
+            <div class="tree-row">
+                <div class="tree-node">D</div>
+                <div class="tree-node">E</div>
+                <div class="tree-node">F</div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TREE TERMINOLOGY
+    ========================== -->
+
+    <section class="theory-section">
+
+        <h2>🧩 Tree Terminology</h2>
+
+        <ul>
+
+            <li>
+                <strong>Node:</strong>
+                An element of a tree.
+            </li>
+
+            <li>
+                <strong>Root:</strong>
+                The topmost node of a tree.
+            </li>
+
+            <li>
+                <strong>Parent:</strong>
+                A node that has one or more children.
+            </li>
+
+            <li>
+                <strong>Child:</strong>
+                A node directly connected below another node.
+            </li>
+
+            <li>
+                <strong>Leaf:</strong>
+                A node having no children.
+            </li>
+
+            <li>
+                <strong>Edge:</strong>
+                The connection between two nodes.
+            </li>
+
+            <li>
+                <strong>Height:</strong>
+                The number of edges on the longest path
+                from a node to a leaf.
+            </li>
+
+            <li>
+                <strong>Depth:</strong>
+                The number of edges from the root
+                to a particular node.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- =========================
+         TYPES OF TREES
+    ========================== -->
+
+    <section class="theory-section">
+
+        <h2>🌲 Types of Trees</h2>
+
+        <ul>
+
+            <li>Binary Tree</li>
+
+            <li>Binary Search Tree</li>
+
+            <li>AVL Tree</li>
+
+            <li>Heap</li>
+
+            <li>B Tree</li>
+
+            <li>B+ Tree</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- =========================
+         BINARY SEARCH TREE
+    ========================== -->
+
+    <section class="theory-section">
+
+        <h2>🔍 Binary Search Tree</h2>
+
+        <p>
+            A Binary Search Tree (BST) is a binary tree
+            in which the left subtree contains values
+            smaller than the root and the right subtree
+            contains values greater than the root.
+        </p>
+
+        <h3>BST Properties</h3>
+
+        <ul>
+
+            <li>
+                Each node can have at most two children.
+            </li>
+
+            <li>
+                Values in the left subtree are smaller
+                than the node value.
+            </li>
+
+            <li>
+                Values in the right subtree are greater
+                than the node value.
+            </li>
+
+            <li>
+                Duplicate handling depends on the
+                implementation.
+            </li>
+
+        </ul>
+
+
+        <h3>Example</h3>
+
+        <div class="bst-example">
+
+<pre>
+        50
+       /  \
+     30    70
+    / \    / \
+   20 40  60 80
+</pre>
+
+        </div>
+
+
+        <h3>BST Operations</h3>
+
+        <ul>
+
+            <li>Insertion</li>
+
+            <li>Deletion</li>
+
+            <li>Searching</li>
+
+            <li>Traversal</li>
+
+        </ul>
+
+
+        <h3>Time Complexity</h3>
+
+        <table class="complexity-table">
+
+            <tr>
+                <th>Operation</th>
+                <th>Average</th>
+                <th>Worst</th>
+            </tr>
+
+            <tr>
+                <td>Search</td>
+                <td>O(log n)</td>
+                <td>O(n)</td>
+            </tr>
+
+            <tr>
+                <td>Insertion</td>
+                <td>O(log n)</td>
+                <td>O(n)</td>
+            </tr>
+
+            <tr>
+                <td>Deletion</td>
+                <td>O(log n)</td>
+                <td>O(n)</td>
+            </tr>
+
+        </table>
+
+
+        <h3>💻 C Structure</h3>
+
+        <div class="code-box">
+
+<pre><code>struct Node
+{
+    int data;
+
+    struct Node *left;
+
+    struct Node *right;
+};</code></pre>
+
+        </div>
+
+
+        <div class="visualization-card">
+
+            <div>
+                <h3>
+                    🧪 Binary Search Tree Visualization
+                </h3>
+
+                <p>
+                    Insert, search and delete nodes
+                    interactively.
+                </p>
+            </div>
+
+            <a href="{% url 'bst_visualization' %}"
+               class="visualization-btn">
+
+                Open BST Visualization →
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TREE TRAVERSAL
+    ========================== -->
+
+    <section class="theory-section">
+
+        <h2>🔄 Tree Traversal</h2>
+
+        <p>
+            Tree traversal is the process of visiting
+            every node of a tree exactly once.
+        </p>
+
+
+        <!-- PREORDER -->
+
+        <div class="sub-topic">
+
+            <h3>1. Preorder Traversal</h3>
+
+            <p>
+                In Preorder traversal, the root node
+                is visited first, followed by the
+                left subtree and then the right subtree.
+            </p>
+
+            <div class="formula-box">
+                Root → Left → Right
+            </div>
+
+        </div>
+
+
+        <!-- INORDER -->
+
+        <div class="sub-topic">
+
+            <h3>2. Inorder Traversal</h3>
+
+            <p>
+                In Inorder traversal, the left subtree
+                is visited first, followed by the root
+                and then the right subtree.
+            </p>
+
+            <div class="formula-box">
+                Left → Root → Right
+            </div>
+
+            <p>
+                In a Binary Search Tree, Inorder traversal
+                produces the elements in sorted order.
+            </p>
+
+        </div>
+
+
+        <!-- POSTORDER -->
+
+        <div class="sub-topic">
+
+            <h3>3. Postorder Traversal</h3>
+
+            <p>
+                In Postorder traversal, the left subtree
+                is visited first, followed by the right
+                subtree and then the root.
+            </p>
+
+            <div class="formula-box">
+                Left → Right → Root
+            </div>
+
+        </div>
+
+
+        <h3>Traversal Example</h3>
+
+        <div class="bst-example">
+
+<pre>
+        1
+       / \
+      2   3
+     / \
+    4   5
+</pre>
+
+        </div>
+
+        <table class="complexity-table">
+
+            <tr>
+                <th>Traversal</th>
+                <th>Order</th>
+            </tr>
+
+            <tr>
+                <td>Preorder</td>
+                <td>Root → Left → Right</td>
+            </tr>
+
+            <tr>
+                <td>Inorder</td>
+                <td>Left → Root → Right</td>
+            </tr>
+
+            <tr>
+                <td>Postorder</td>
+                <td>Left → Right → Root</td>
+            </tr>
+
+        </table>
+
+
+        <div class="visualization-card">
+
+            <div>
+                <h3>
+                    🧪 Tree Traversal Visualization
+                </h3>
+
+                <p>
+                    Visualize Preorder, Inorder and
+                    Postorder traversal step by step.
+                </p>
+            </div>
+
+            <a href="{% url 'traversal_visualization' %}"
+               class="visualization-btn">
+
+                Open Traversal Visualization →
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         B TREE
+    ========================== -->
+
+    <section class="theory-section">
+
+        <h2>🌳 B Tree</h2>
+
+        <p>
+            A B Tree is a self-balancing multi-way
+            search tree in which each node can contain
+            multiple keys and multiple children.
+        </p>
+
+        <h3>Properties</h3>
+
+        <ul>
+
+            <li>
+                A node can contain multiple keys.
+            </li>
+
+            <li>
+                A node can have multiple children.
+            </li>
+
+            <li>
+                All leaf nodes are at the same level.
+            </li>
+
+            <li>
+                B Trees remain balanced after insertion
+                and deletion.
+            </li>
+
+            <li>
+                They are useful for storing large
+                amounts of data.
+            </li>
+
+        </ul>
+
+
+        <h3>Applications</h3>
+
+        <ul>
+
+            <li>Database indexing</li>
+
+            <li>File systems</li>
+
+            <li>Disk-based storage</li>
+
+        </ul>
+
+
+        <h3>Example</h3>
+
+        <div class="b-tree-example">
+
+            <div class="b-node">
+                20 | 40
+            </div>
+
+            <div class="b-children">
+
+                <div class="b-node">
+                    5 | 10 | 15
+                </div>
+
+                <div class="b-node">
+                    25 | 30
+                </div>
+
+                <div class="b-node">
+                    45 | 50 | 60
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="visualization-card">
+
+            <div>
+                <h3>
+                    🧪 B Tree Visualization
+                </h3>
+
+                <p>
+                    Visualize B Tree insertion,
+                    splitting and searching.
+                </p>
+            </div>
+
+            <a href="{% url 'b_tree_visualization' %}"
+               class="visualization-btn">
+
+                Open B Tree Visualization →
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         B+ TREE
+    ========================== -->
+
+    <section class="theory-section">
+
+        <h2>🌿 B+ Tree</h2>
+
+        <p>
+            A B+ Tree is a balanced multi-way tree
+            commonly used in databases and file systems.
+            Unlike a B Tree, actual records are stored
+            at the leaf level.
+        </p>
+
+        <h3>Properties</h3>
+
+        <ul>
+
+            <li>
+                Internal nodes contain search keys.
+            </li>
+
+            <li>
+                Actual data records are stored
+                at leaf nodes.
+            </li>
+
+            <li>
+                Leaf nodes are linked together.
+            </li>
+
+            <li>
+                All leaves are at the same level.
+            </li>
+
+            <li>
+                Sequential access is efficient.
+            </li>
+
+        </ul>
+
+
+        <h3>Advantages</h3>
+
+        <ul>
+
+            <li>
+                Efficient range searching.
+            </li>
+
+            <li>
+                Efficient sequential traversal.
+            </li>
+
+            <li>
+                Suitable for database indexing.
+            </li>
+
+        </ul>
+
+
+        <h3>Example</h3>
+
+        <div class="b-tree-example">
+
+            <div class="b-node">
+                30 | 60
+            </div>
+
+            <div class="b-children">
+
+                <div class="b-node">
+                    10 | 20
+                </div>
+
+                <div class="b-node">
+                    30 | 40 | 50
+                </div>
+
+                <div class="b-node">
+                    60 | 70 | 80
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="visualization-card">
+
+            <div>
+                <h3>
+                    🧪 B+ Tree Visualization
+                </h3>
+
+                <p>
+                    Visualize B+ Tree insertion,
+                    leaf linking and searching.
+                </p>
+            </div>
+
+            <a href="{% url 'b_plus_tree_visualization' %}"
+               class="visualization-btn">
+
+                Open B+ Tree Visualization →
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+</div>
+
+
+<script src="{% static 'lab/js/tree.js' %}">
+</script>
+
+{% endblock %}

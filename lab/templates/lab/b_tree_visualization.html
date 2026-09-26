@@ -1,0 +1,203 @@
+{% extends 'lab/base.html' %}
+{% load static %}
+
+{% block title %}
+B-Tree Visualization | Virtual Lab
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet"
+      href="{% static 'lab/css/b_tree_visualization.css' %}">
+
+<div class="btree-page">
+
+    <!-- HEADER -->
+
+    <div class="page-header">
+
+        <p class="small-title">
+            VIRTUAL LAB / TREE / B-TREE
+        </p>
+
+        <h1>🌳 B-Tree Visualization</h1>
+
+        <p>
+            First enter the B-Tree order, then insert keys one by one
+            and observe how nodes split automatically.
+        </p>
+
+    </div>
+
+
+    <!-- CONTROL -->
+
+    <section class="control-card">
+
+        <h2>⚙ Create B-Tree</h2>
+
+        <p>
+            Enter the order first. Order must be 3 or greater.
+        </p>
+
+        <div class="input-row">
+
+            <input
+                type="number"
+                id="orderInput"
+                min="3"
+                placeholder="Enter Order"
+            >
+
+            <button
+                id="setOrderBtn"
+                class="order-btn">
+
+                Set Order
+
+            </button>
+
+        </div>
+
+        <div class="input-row key-row">
+
+            <input
+                type="number"
+                id="keyInput"
+                placeholder="Enter Key"
+                disabled
+            >
+
+            <button
+                id="insertBtn"
+                class="insert-btn"
+                disabled>
+
+                Insert Key
+
+            </button>
+
+            <button
+                id="resetBtn"
+                class="reset-btn">
+
+                Reset
+
+            </button>
+
+        </div>
+
+        <p id="message" class="message">
+            Please enter B-Tree order first.
+        </p>
+
+    </section>
+
+
+    <!-- INFORMATION -->
+
+    <section class="info-card">
+
+        <div class="info-box">
+
+            <span>Order</span>
+
+            <strong id="currentOrder">
+                -
+            </strong>
+
+        </div>
+
+        <div class="info-box">
+
+            <span>Maximum Keys</span>
+
+            <strong id="maxKeys">
+                -
+            </strong>
+
+        </div>
+
+        <div class="info-box">
+
+            <span>Maximum Children</span>
+
+            <strong id="maxChildren">
+                -
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- TREE -->
+
+    <section class="tree-section">
+
+        <h2>🌳 B-Tree</h2>
+
+        <p>
+            Each rectangle is one B-Tree node containing multiple sorted keys.
+        </p>
+
+        <div id="treeWrapper" class="tree-wrapper">
+
+            <svg id="treeLines"
+                 class="tree-lines">
+            </svg>
+
+            <div id="treeNodes"
+                 class="tree-nodes">
+            </div>
+
+            <div id="emptyTree"
+                 class="empty-tree">
+
+                Set Order and Insert Keys
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OPERATION -->
+
+    <section class="operation-card">
+
+        <h2>⚙ Current Operation</h2>
+
+        <div id="operationText"
+             class="operation-text">
+
+            Waiting for B-Tree order.
+
+        </div>
+
+    </section>
+
+
+    <!-- RESULT -->
+
+    <section class="result-card">
+
+        <h2>📋 Sorted Keys</h2>
+
+        <div id="keyResult"
+             class="key-result">
+
+            No keys inserted.
+
+        </div>
+
+    </section>
+
+
+</div>
+
+
+<script src="{% static 'lab/js/b_tree_visualization.js' %}"></script>
+
+{% endblock %}

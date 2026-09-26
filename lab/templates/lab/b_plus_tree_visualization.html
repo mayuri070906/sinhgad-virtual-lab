@@ -1,0 +1,239 @@
+{% extends 'lab/base.html' %}
+{% load static %}
+
+{% block title %}
+B+ Tree Visualization | Virtual Lab
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet"
+      href="{% static 'lab/css/b_plus_tree_visualization.css' %}">
+
+<div class="bplus-page">
+
+    <!-- HEADER -->
+
+    <div class="page-header">
+
+        <p class="small-title">
+            VIRTUAL LAB / TREE / B+ TREE
+        </p>
+
+        <h1>🌳 B+ Tree Visualization</h1>
+
+        <p>
+            Enter the B+ Tree order and insert keys one by one.
+            Observe internal-node splitting, leaf splitting and
+            linked leaf nodes.
+        </p>
+
+    </div>
+
+
+    <!-- CONTROL -->
+
+    <section class="control-card">
+
+        <h2>⚙ Create B+ Tree</h2>
+
+        <p>
+            Enter the B+ Tree order first.
+            Order must be 3 or greater.
+        </p>
+
+        <div class="input-row">
+
+            <input
+                type="number"
+                id="orderInput"
+                min="3"
+                placeholder="Enter Order"
+            >
+
+            <button
+                id="setOrderBtn"
+                class="order-btn">
+                Set Order
+            </button>
+
+        </div>
+
+
+        <div class="input-row key-row">
+
+            <input
+                type="number"
+                id="keyInput"
+                placeholder="Enter Key"
+                disabled
+            >
+
+            <button
+                id="insertBtn"
+                class="insert-btn"
+                disabled>
+                Insert Key
+            </button>
+
+            <button
+                id="resetBtn"
+                class="reset-btn">
+                Reset
+            </button>
+
+        </div>
+
+
+        <p id="message" class="message">
+            Please enter B+ Tree order first.
+        </p>
+
+    </section>
+
+
+    <!-- INFORMATION -->
+
+    <section class="info-card">
+
+        <div class="info-box">
+
+            <span>Order</span>
+
+            <strong id="currentOrder">
+                -
+            </strong>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <span>Maximum Keys</span>
+
+            <strong id="maxKeys">
+                -
+            </strong>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <span>Maximum Children</span>
+
+            <strong id="maxChildren">
+                -
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- TREE -->
+
+    <section class="tree-section">
+
+        <h2>🌳 Your B+ Tree</h2>
+
+        <p>
+            Internal nodes contain separator keys.
+            Actual data is stored in the leaf nodes.
+            Leaf nodes are connected from left to right.
+        </p>
+
+
+        <div
+            id="treeWrapper"
+            class="tree-wrapper">
+
+            <svg
+                id="treeLines"
+                class="tree-lines">
+            </svg>
+
+
+            <div
+                id="treeNodes"
+                class="tree-nodes">
+            </div>
+
+
+            <div
+                id="emptyTree"
+                class="empty-tree">
+
+                Set Order and Insert Keys
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LEAF CHAIN -->
+
+    <section class="leaf-section">
+
+        <h2>🔗 Leaf Node Chain</h2>
+
+        <p>
+            All actual data keys are stored in leaf nodes.
+            Leaf nodes are linked sequentially.
+        </p>
+
+
+        <div
+            id="leafChain"
+            class="leaf-chain">
+
+            No leaf nodes.
+
+        </div>
+
+    </section>
+
+
+    <!-- OPERATION -->
+
+    <section class="operation-card">
+
+        <h2>⚙ Current Operation</h2>
+
+        <div
+            id="operationText"
+            class="operation-text">
+
+            Waiting for B+ Tree order.
+
+        </div>
+
+    </section>
+
+
+    <!-- SORTED DATA -->
+
+    <section class="result-card">
+
+        <h2>📋 Data in Leaf Nodes</h2>
+
+        <div
+            id="keyResult"
+            class="key-result">
+
+            No keys inserted.
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script
+    src="{% static 'lab/js/b_plus_tree_visualization.js' %}">
+</script>
+
+{% endblock %}

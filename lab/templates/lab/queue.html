@@ -1,0 +1,266 @@
+{% extends 'lab/base.html' %}
+
+{% block title %}
+Queue Virtual Lab
+{% endblock %}
+
+{% block content %}
+
+<div class="queue-lab">
+
+    <!-- HEADER -->
+
+    <div class="queue-header">
+
+        <p class="small-title">
+            DATA STRUCTURE EXPERIMENT
+        </p>
+
+        <h1>Queue Virtual Lab</h1>
+
+        <p>
+            Visualize Queue operations using
+            the FIFO principle.
+        </p>
+
+    </div>
+
+
+    <!-- MAIN WORKSPACE -->
+
+    <div class="queue-workspace">
+
+
+        <!-- THEORY -->
+
+        <div class="queue-panel theory-panel">
+
+            <h2>📘 Queue</h2>
+
+            <p>
+                A Queue is a linear data structure
+                that follows the
+                <strong>FIFO</strong> principle.
+            </p>
+
+
+            <div class="principle">
+
+                <span>FIFO</span>
+
+                <small>
+                    First In, First Out
+                </small>
+
+            </div>
+
+
+            <h3>Operations</h3>
+
+            <ul>
+
+                <li>
+                    <strong>Enqueue</strong> -
+                    Add an element at Rear
+                </li>
+
+                <li>
+                    <strong>Dequeue</strong> -
+                    Remove an element from Front
+                </li>
+
+                <li>
+                    <strong>Peek</strong> -
+                    View the Front element
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- VISUALIZATION -->
+
+        <div class="queue-panel visualization-panel">
+
+            <div class="visualization-title">
+
+                <h2>Queue Visualization</h2>
+
+                <span id="queue-size">
+                    Size: 0
+                </span>
+
+            </div>
+
+
+            <div class="queue-area">
+
+
+                <div class="pointer front-pointer">
+
+                    <span>FRONT</span>
+
+                    <span class="pointer-arrow">
+                        ↓
+                    </span>
+
+                </div>
+
+
+                <div class="queue-track">
+
+                    <div id="queue-container">
+
+                        <div class="empty-queue">
+                            Queue is empty
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="pointer rear-pointer">
+
+                    <span>REAR</span>
+
+                    <span class="pointer-arrow">
+                        ↓
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTROLS -->
+
+        <div class="queue-panel controls-panel">
+
+            <h2>⚙ Operations</h2>
+
+
+            <label for="queue-input">
+                Enter value
+            </label>
+
+
+            <input
+                type="number"
+                id="queue-input"
+                placeholder="Example: 10"
+            >
+
+
+            <button
+                class="operation-btn enqueue-btn"
+                onclick="enqueueElement()">
+
+                ➡ Enqueue
+
+            </button>
+
+
+            <button
+                class="operation-btn dequeue-btn"
+                onclick="dequeueElement()">
+
+                ⬅ Dequeue
+
+            </button>
+
+
+            <button
+                class="operation-btn peek-btn"
+                onclick="peekQueue()">
+
+                👁 Peek
+
+            </button>
+
+
+            <button
+                class="operation-btn reset-btn"
+                onclick="resetQueue()">
+
+                ↻ Reset
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- OUTPUT -->
+
+    <div class="queue-panel output-panel">
+
+        <div class="output-heading">
+
+            <h2>Console Output</h2>
+
+            <span id="queue-status">
+                Ready
+            </span>
+
+        </div>
+
+
+        <div id="queue-output">
+            Ready to perform an operation...
+        </div>
+
+    </div>
+
+
+    <!-- C CODE -->
+
+    <div class="queue-panel code-panel">
+
+        <h2>💻 C Implementation</h2>
+
+
+<pre><code>#define MAX 5
+
+int queue[MAX];
+
+int front = -1;
+int rear = -1;
+
+void enqueue(int value)
+{
+    if(rear == MAX - 1)
+    {
+        printf("Queue Overflow");
+    }
+    else
+    {
+        if(front == -1)
+            front = 0;
+
+        queue[++rear] = value;
+    }
+}
+
+void dequeue()
+{
+    if(front == -1 || front > rear)
+    {
+        printf("Queue Underflow");
+    }
+    else
+    {
+        front++;
+    }
+}</code></pre>
+
+    </div>
+
+</div>
+
+{% endblock %}

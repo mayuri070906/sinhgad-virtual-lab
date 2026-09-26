@@ -1,0 +1,315 @@
+.insertion-page {
+
+    max-width: 1100px;
+
+    margin: 55px auto;
+
+    padding: 0 20px;
+
+    color: #111827;
+}
+
+
+.page-header {
+
+    margin-bottom: 40px;
+}
+
+
+.small-title {
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #64748b;
+
+    margin-bottom: 10px;
+}
+
+
+.page-header h1 {
+
+    font-size: 42px;
+
+    margin-bottom: 12px;
+}
+
+
+.page-header > p:last-child {
+
+    color: #64748b;
+
+    line-height: 1.7;
+}
+
+
+.theory-section {
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    padding: 30px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.04);
+}
+
+
+.theory-section h2 {
+
+    margin-top: 0;
+
+    margin-bottom: 18px;
+
+    font-size: 26px;
+}
+
+
+.theory-section h3 {
+
+    margin-top: 25px;
+}
+
+
+.theory-section p {
+
+    color: #475569;
+
+    line-height: 1.8;
+}
+
+
+.theory-section li {
+
+    color: #475569;
+
+    line-height: 1.8;
+
+    margin-bottom: 8px;
+}
+
+
+.array-box {
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+
+    padding: 18px;
+
+    margin: 15px 0;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    letter-spacing: 8px;
+}
+
+
+.algorithm-box {
+
+    background: #111827;
+
+    border-radius: 10px;
+
+    overflow-x: auto;
+}
+
+
+.algorithm-box pre {
+
+    color: white;
+
+    padding: 25px;
+
+    margin: 0;
+
+    line-height: 1.7;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+}
+
+
+.complexity-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 20px;
+}
+
+
+.complexity-table th,
+.complexity-table td {
+
+    padding: 14px;
+
+    border: 1px solid #e5e7eb;
+
+    text-align: center;
+}
+
+
+.complexity-table th {
+
+    background: #f8fafc;
+}
+
+
+.code-box {
+
+    background: #111827;
+
+    border-radius: 10px;
+
+    overflow-x: auto;
+}
+
+
+.code-box pre {
+
+    color: white;
+
+    padding: 25px;
+
+    margin: 0;
+
+    line-height: 1.65;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+}
+
+
+.visualization-card {
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    padding: 30px;
+
+    margin-bottom: 50px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+.visualization-card h2 {
+
+    margin: 0 0 10px;
+}
+
+
+.visualization-card p {
+
+    color: #64748b;
+
+    line-height: 1.6;
+}
+
+
+.visualization-btn {
+
+    background: #111827;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 14px 22px;
+
+    border-radius: 9px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: 0.2s;
+}
+
+
+.visualization-btn:hover {
+
+    background: #374151;
+
+    transform: translateY(-2px);
+}
+
+
+@media (max-width: 700px) {
+
+    .insertion-page {
+
+        margin: 40px auto;
+
+        padding: 0 15px;
+    }
+
+
+    .page-header h1 {
+
+        font-size: 32px;
+    }
+
+
+    .theory-section {
+
+        padding: 22px;
+    }
+
+
+    .array-box {
+
+        font-size: 16px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .visualization-card {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .visualization-btn {
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        text-align: center;
+    }
+
+}

@@ -1,0 +1,225 @@
+.dll-page-container {
+    max-width: 1100px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+.dll-page-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.dll-breadcrumb {
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 12px;
+}
+
+.dll-page-header h1 {
+    font-size: 40px;
+    margin: 0 0 12px;
+    color: #111827;
+}
+
+.dll-page-header p {
+    max-width: 850px;
+    margin: auto;
+    color: #64748b;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.dll-theory-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.dll-theory-nav a {
+    text-decoration: none;
+    color: #0f172a;
+    border: 1px solid #dbe1e8;
+    background: white;
+    padding: 9px 15px;
+    border-radius: 8px;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.dll-theory-nav a:hover {
+    background: #f1f5f9;
+    transform: translateY(-2px);
+}
+
+.dll-theory-section {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+    scroll-margin-top: 30px;
+}
+
+.dll-theory-section h2 {
+    font-size: 27px;
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #111827;
+}
+
+.dll-theory-section p {
+    color: #334155;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.dll-theory-section ul {
+    padding-left: 25px;
+}
+
+.dll-theory-section li {
+    color: #334155;
+    line-height: 1.8;
+    margin-bottom: 7px;
+}
+
+.dll-key-idea {
+    margin-top: 20px;
+    padding: 17px 18px;
+    background: #f1f3f5;
+    border-left: 4px solid #111827;
+    border-radius: 8px;
+    color: #334155;
+}
+
+.dll-simple-code {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    overflow-x: auto;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+.dll-theory-diagram {
+    margin: 25px 0;
+    padding: 25px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #f8fafc;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.dll-diagram-note {
+    text-align: center;
+    font-size: 14px !important;
+    color: #64748b !important;
+}
+
+.dll-complexity-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.dll-complexity-table th {
+    background: #f1f5f9;
+    color: #111827;
+    font-weight: 700;
+}
+
+.dll-complexity-table th,
+.dll-complexity-table td {
+    border: 1px solid #e2e8f0;
+    padding: 13px 15px;
+    text-align: left;
+}
+
+.dll-complexity-table td {
+    color: #334155;
+}
+
+.dll-code-box {
+    background: #0f172a;
+    border-radius: 12px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.dll-code-box pre {
+    margin: 0;
+    color: #e2e8f0;
+    font-size: 14px;
+    line-height: 1.65;
+    font-family: Consolas, "Courier New", monospace;
+}
+
+.dll-visualization-link {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.dll-visualization-link h2 {
+    margin-top: 0;
+    color: #111827;
+}
+
+.dll-visualization-link p {
+    color: #64748b;
+    margin-bottom: 22px;
+}
+
+.dll-primary-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #111827;
+    color: white;
+    padding: 13px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.dll-primary-btn:hover {
+    background: #020617;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+
+    .dll-page-container {
+        margin-top: 30px;
+    }
+
+    .dll-page-header h1 {
+        font-size: 32px;
+    }
+
+    .dll-theory-section {
+        padding: 22px;
+    }
+
+    .dll-theory-section h2 {
+        font-size: 23px;
+    }
+
+    .dll-theory-diagram {
+        font-size: 17px;
+        overflow-x: auto;
+    }
+
+    .dll-complexity-table {
+        font-size: 13px;
+    }
+}

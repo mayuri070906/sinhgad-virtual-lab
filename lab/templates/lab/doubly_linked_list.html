@@ -1,0 +1,763 @@
+{% extends 'lab/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Doubly Linked List
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet"
+      href="{% static 'lab/css/doubly_linked_list.css' %}">
+
+<div class="dll-page-container">
+
+    <!-- HEADER -->
+
+    <div class="dll-page-header">
+
+        <div class="dll-breadcrumb">
+            Data Structures → Doubly Linked List
+        </div>
+
+        <h1>
+            🔗 Doubly Linked List
+        </h1>
+
+        <p>
+            Learn the concept, structure, operations,
+            advantages, disadvantages and C implementation of
+            Doubly Linked List.
+        </p>
+
+    </div>
+
+
+    <!-- THEORY NAVIGATION -->
+
+    <div class="dll-theory-nav">
+
+        <a href="#introduction">
+            Introduction
+        </a>
+
+        <a href="#structure">
+            Structure
+        </a>
+
+        <a href="#operations">
+            Operations
+        </a>
+
+        <a href="#advantages">
+            Advantages
+        </a>
+
+        <a href="#disadvantages">
+            Disadvantages
+        </a>
+
+        <a href="#applications">
+            Applications
+        </a>
+
+        <a href="#complexity">
+            Complexity
+        </a>
+
+        <a href="#c-code">
+            C Code
+        </a>
+
+    </div>
+
+
+    <!-- INTRODUCTION -->
+
+    <section id="introduction"
+             class="dll-theory-section">
+
+        <h2>
+            📖 What is Doubly Linked List?
+        </h2>
+
+        <p>
+            A Doubly Linked List is a linear data structure
+            in which every node contains three parts:
+            a pointer to the previous node, data and a
+            pointer to the next node.
+        </p>
+
+        <p>
+            The previous pointer stores the address of the
+            previous node, while the next pointer stores the
+            address of the next node.
+        </p>
+
+        <div class="dll-key-idea">
+
+            <strong>Key Idea:</strong>
+
+            Previous Pointer + Data + Next Pointer
+
+        </div>
+
+    </section>
+
+
+    <!-- STRUCTURE -->
+
+    <section id="structure"
+             class="dll-theory-section">
+
+        <h2>
+            🧩 Structure of Node
+        </h2>
+
+        <p>
+            Each node of a Doubly Linked List contains
+            three components:
+        </p>
+
+        <ul>
+
+            <li>
+                <strong>Prev:</strong>
+                Stores the address of the previous node.
+            </li>
+
+            <li>
+                <strong>Data:</strong>
+                Stores the actual value.
+            </li>
+
+            <li>
+                <strong>Next:</strong>
+                Stores the address of the next node.
+            </li>
+
+        </ul>
+
+
+        <pre class="dll-simple-code"><code>struct Node
+{
+    struct Node *prev;
+
+    int data;
+
+    struct Node *next;
+};</code></pre>
+
+    </section>
+
+
+    <!-- EXAMPLE -->
+
+    <section class="dll-theory-section">
+
+        <h2>
+            🔗 Example
+        </h2>
+
+        <p>
+            A Doubly Linked List containing three nodes
+            can be represented as:
+        </p>
+
+        <div class="dll-theory-diagram">
+
+            NULL ⇄ 10 ⇄ 20 ⇄ 30 ⇄ NULL
+
+        </div>
+
+        <p class="dll-diagram-note">
+
+            The first node has
+            <strong>prev = NULL</strong>
+            and the last node has
+            <strong>next = NULL</strong>.
+
+        </p>
+
+    </section>
+
+
+    <!-- OPERATIONS -->
+
+    <section id="operations"
+             class="dll-theory-section">
+
+        <h2>
+            ⚙️ Operations
+        </h2>
+
+        <p>
+            The following operations can be performed
+            on a Doubly Linked List:
+        </p>
+
+        <ul>
+
+            <li>
+                <strong>Begin Insert</strong>
+                – Insert a node at the beginning.
+            </li>
+
+            <li>
+                <strong>End Insert</strong>
+                – Insert a node at the end.
+            </li>
+
+            <li>
+                <strong>Location Insert</strong>
+                – Insert a node at a specific position.
+            </li>
+
+            <li>
+                <strong>Begin Delete</strong>
+                – Delete the first node.
+            </li>
+
+            <li>
+                <strong>End Delete</strong>
+                – Delete the last node.
+            </li>
+
+            <li>
+                <strong>Location Delete</strong>
+                – Delete a node from a specific position.
+            </li>
+
+            <li>
+                <strong>Search</strong>
+                – Search for a particular value.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- ADVANTAGES -->
+
+    <section id="advantages"
+             class="dll-theory-section">
+
+        <h2>
+            ✅ Advantages
+        </h2>
+
+        <ul>
+
+            <li>
+                Supports forward and backward traversal.
+            </li>
+
+            <li>
+                Deletion of a node is easier because
+                the previous node is directly available.
+            </li>
+
+            <li>
+                Insertion and deletion can be performed
+                at both ends.
+            </li>
+
+            <li>
+                Useful when two-way navigation is required.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- DISADVANTAGES -->
+
+    <section id="disadvantages"
+             class="dll-theory-section">
+
+        <h2>
+            ❌ Disadvantages
+        </h2>
+
+        <ul>
+
+            <li>
+                Requires extra memory for the previous pointer.
+            </li>
+
+            <li>
+                More complex than a Singly Linked List.
+            </li>
+
+            <li>
+                More pointer manipulation is required.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- APPLICATIONS -->
+
+    <section id="applications"
+             class="dll-theory-section">
+
+        <h2>
+            📱 Applications
+        </h2>
+
+        <ul>
+
+            <li>
+                Browser forward and backward navigation.
+            </li>
+
+            <li>
+                Undo and redo operations.
+            </li>
+
+            <li>
+                Music playlist navigation.
+            </li>
+
+            <li>
+                Image viewer navigation.
+            </li>
+
+            <li>
+                Navigation systems.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- COMPLEXITY -->
+
+    <section id="complexity"
+             class="dll-theory-section">
+
+        <h2>
+            ⏱ Time Complexity
+        </h2>
+
+        <table class="dll-complexity-table">
+
+            <thead>
+
+                <tr>
+                    <th>Operation</th>
+                    <th>Time Complexity</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Begin Insert</td>
+                    <td>O(1)</td>
+                </tr>
+
+                <tr>
+                    <td>End Insert</td>
+                    <td>O(n)</td>
+                </tr>
+
+                <tr>
+                    <td>Location Insert</td>
+                    <td>O(n)</td>
+                </tr>
+
+                <tr>
+                    <td>Begin Delete</td>
+                    <td>O(1)</td>
+                </tr>
+
+                <tr>
+                    <td>End Delete</td>
+                    <td>O(n)</td>
+                </tr>
+
+                <tr>
+                    <td>Location Delete</td>
+                    <td>O(n)</td>
+                </tr>
+
+                <tr>
+                    <td>Search</td>
+                    <td>O(n)</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <!-- C CODE -->
+
+    <section id="c-code"
+             class="dll-theory-section">
+
+        <h2>
+            💻 C Language Implementation
+        </h2>
+
+        <p>
+            Complete implementation of Doubly Linked List
+            using C language.
+        </p>
+
+
+        <div class="dll-code-box">
+
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+struct Node
+{
+    struct Node *prev;
+    int data;
+    struct Node *next;
+};
+
+struct Node *head = NULL;
+
+
+/* Insert at Beginning */
+
+void insertBegin(int value)
+{
+    struct Node *newNode;
+
+    newNode = (struct Node*)malloc(sizeof(struct Node));
+
+    newNode-&gt;data = value;
+    newNode-&gt;prev = NULL;
+    newNode-&gt;next = head;
+
+    if (head != NULL)
+    {
+        head-&gt;prev = newNode;
+    }
+
+    head = newNode;
+}
+
+
+/* Insert at End */
+
+void insertEnd(int value)
+{
+    struct Node *newNode;
+    struct Node *temp;
+
+    newNode = (struct Node*)malloc(sizeof(struct Node));
+
+    newNode-&gt;data = value;
+    newNode-&gt;next = NULL;
+
+    if (head == NULL)
+    {
+        newNode-&gt;prev = NULL;
+        head = newNode;
+        return;
+    }
+
+    temp = head;
+
+    while (temp-&gt;next != NULL)
+    {
+        temp = temp-&gt;next;
+    }
+
+    temp-&gt;next = newNode;
+    newNode-&gt;prev = temp;
+}
+
+
+/* Insert at Location */
+
+void insertLocation(int value, int position)
+{
+    struct Node *newNode;
+    struct Node *temp;
+
+    if (position == 1)
+    {
+        insertBegin(value);
+        return;
+    }
+
+    newNode = (struct Node*)malloc(sizeof(struct Node));
+
+    newNode-&gt;data = value;
+
+    temp = head;
+
+    for (int i = 1;
+         i &lt; position - 1 &amp;&amp; temp != NULL;
+         i++)
+    {
+        temp = temp-&gt;next;
+    }
+
+    if (temp == NULL)
+    {
+        printf("Invalid position\n");
+        free(newNode);
+        return;
+    }
+
+    newNode-&gt;next = temp-&gt;next;
+    newNode-&gt;prev = temp;
+
+    if (temp-&gt;next != NULL)
+    {
+        temp-&gt;next-&gt;prev = newNode;
+    }
+
+    temp-&gt;next = newNode;
+}
+
+
+/* Delete at Beginning */
+
+void deleteBegin()
+{
+    struct Node *temp;
+
+    if (head == NULL)
+    {
+        printf("List is empty\n");
+        return;
+    }
+
+    temp = head;
+
+    head = head-&gt;next;
+
+    if (head != NULL)
+    {
+        head-&gt;prev = NULL;
+    }
+
+    free(temp);
+}
+
+
+/* Delete at End */
+
+void deleteEnd()
+{
+    struct Node *temp;
+
+    if (head == NULL)
+    {
+        printf("List is empty\n");
+        return;
+    }
+
+    temp = head;
+
+    while (temp-&gt;next != NULL)
+    {
+        temp = temp-&gt;next;
+    }
+
+    if (temp-&gt;prev != NULL)
+    {
+        temp-&gt;prev-&gt;next = NULL;
+    }
+    else
+    {
+        head = NULL;
+    }
+
+    free(temp);
+}
+
+
+/* Delete at Location */
+
+void deleteLocation(int position)
+{
+    struct Node *temp;
+
+    if (head == NULL)
+    {
+        printf("List is empty\n");
+        return;
+    }
+
+    temp = head;
+
+    for (int i = 1;
+         i &lt; position &amp;&amp; temp != NULL;
+         i++)
+    {
+        temp = temp-&gt;next;
+    }
+
+    if (temp == NULL)
+    {
+        printf("Invalid position\n");
+        return;
+    }
+
+    if (temp-&gt;prev != NULL)
+    {
+        temp-&gt;prev-&gt;next = temp-&gt;next;
+    }
+    else
+    {
+        head = temp-&gt;next;
+    }
+
+    if (temp-&gt;next != NULL)
+    {
+        temp-&gt;next-&gt;prev = temp-&gt;prev;
+    }
+
+    free(temp);
+}
+
+
+/* Search */
+
+void search(int value)
+{
+    struct Node *temp = head;
+
+    int position = 1;
+
+    while (temp != NULL)
+    {
+        if (temp-&gt;data == value)
+        {
+            printf("Found at position %d\n", position);
+            return;
+        }
+
+        temp = temp-&gt;next;
+        position++;
+    }
+
+    printf("Value not found\n");
+}
+
+
+/* Display Forward */
+
+void displayForward()
+{
+    struct Node *temp = head;
+
+    while (temp != NULL)
+    {
+        printf("%d &lt;-&gt; ", temp-&gt;data);
+        temp = temp-&gt;next;
+    }
+
+    printf("NULL\n");
+}
+
+
+/* Display Backward */
+
+void displayBackward()
+{
+    struct Node *temp = head;
+
+    if (temp == NULL)
+    {
+        printf("List is empty\n");
+        return;
+    }
+
+    while (temp-&gt;next != NULL)
+    {
+        temp = temp-&gt;next;
+    }
+
+    while (temp != NULL)
+    {
+        printf("%d &lt;-&gt; ", temp-&gt;data);
+        temp = temp-&gt;prev;
+    }
+
+    printf("NULL\n");
+}
+
+
+/* Main */
+
+int main()
+{
+    insertBegin(10);
+
+    insertEnd(20);
+
+    insertEnd(30);
+
+    insertLocation(15, 2);
+
+    printf("Forward:\n");
+    displayForward();
+
+    printf("Backward:\n");
+    displayBackward();
+
+    search(20);
+
+    deleteBegin();
+
+    deleteEnd();
+
+    deleteLocation(2);
+
+    displayForward();
+
+    return 0;
+}</code></pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- VISUALIZATION -->
+
+    <section class="dll-visualization-link">
+
+        <h2>
+            🧪 Interactive Visualization
+        </h2>
+
+        <p>
+            Perform insertion, deletion and search
+            operations visually on a Doubly Linked List.
+        </p>
+
+        <a href="{% url 'dll_visualization' %}"
+           class="dll-primary-btn">
+
+            Open Visualization →
+
+        </a>
+
+    </section>
+
+</div>
+
+<script src="{% static 'lab/js/doubly_linked_list.js' %}">
+</script>
+
+{% endblock %}

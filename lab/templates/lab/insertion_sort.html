@@ -1,0 +1,420 @@
+{% extends 'lab/base.html' %}
+{% load static %}
+
+{% block title %}
+Insertion Sort | Virtual Lab
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet"
+      href="{% static 'lab/css/insertion_sort.css' %}">
+
+<div class="insertion-page">
+
+    <div class="page-header">
+
+        <p class="small-title">
+            VIRTUAL LAB / SORTING / INSERTION SORT
+        </p>
+
+        <h1>
+            📝 Insertion Sort
+        </h1>
+
+        <p>
+            Learn the complete concept, working,
+            algorithm, complexity and C implementation
+            of Insertion Sort.
+        </p>
+
+    </div>
+
+
+    <!-- THEORY -->
+
+    <section class="theory-section">
+
+        <h2>📖 What is Insertion Sort?</h2>
+
+        <p>
+            Insertion Sort is a simple comparison-based
+            sorting algorithm. It builds the sorted array
+            one element at a time.
+        </p>
+
+        <p>
+            Each new element is compared with the elements
+            in the sorted portion and is inserted into its
+            correct position.
+        </p>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="theory-section">
+
+        <h2>⚙️ How Insertion Sort Works</h2>
+
+        <ol>
+
+            <li>
+                Start from the second element of the array.
+            </li>
+
+            <li>
+                Store the current element as the
+                <strong>key</strong>.
+            </li>
+
+            <li>
+                Compare the key with the elements before it.
+            </li>
+
+            <li>
+                Shift elements greater than the key
+                one position to the right.
+            </li>
+
+            <li>
+                Insert the key into its correct position.
+            </li>
+
+            <li>
+                Repeat until the complete array is sorted.
+            </li>
+
+        </ol>
+
+    </section>
+
+
+    <!-- EXAMPLE -->
+
+    <section class="theory-section">
+
+        <h2>🧩 Example</h2>
+
+        <p>
+            Consider the following array:
+        </p>
+
+        <div class="array-box">
+            40 &nbsp; 20 &nbsp; 30 &nbsp; 10
+        </div>
+
+
+        <h3>Pass 1</h3>
+
+        <p>
+            Key = <strong>20</strong>.
+            Compare 20 with 40 and shift 40.
+        </p>
+
+        <div class="array-box">
+            20 &nbsp; 40 &nbsp; 30 &nbsp; 10
+        </div>
+
+
+        <h3>Pass 2</h3>
+
+        <p>
+            Key = <strong>30</strong>.
+            Shift 40 and insert 30.
+        </p>
+
+        <div class="array-box">
+            20 &nbsp; 30 &nbsp; 40 &nbsp; 10
+        </div>
+
+
+        <h3>Pass 3</h3>
+
+        <p>
+            Key = <strong>10</strong>.
+            Shift 40, 30 and 20 and insert 10.
+        </p>
+
+        <div class="array-box">
+            10 &nbsp; 20 &nbsp; 30 &nbsp; 40
+        </div>
+
+    </section>
+
+
+    <!-- ALGORITHM -->
+
+    <section class="theory-section">
+
+        <h2>📝 Insertion Sort Algorithm</h2>
+
+        <div class="algorithm-box">
+
+<pre>
+InsertionSort(array, n)
+
+    for i = 1 to n - 1
+
+        key = array[i]
+
+        j = i - 1
+
+        while j >= 0
+              and array[j] > key
+
+            array[j + 1] = array[j]
+
+            j = j - 1
+
+        end while
+
+        array[j + 1] = key
+
+    end for
+</pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- PSEUDOCODE -->
+
+    <section class="theory-section">
+
+        <h2>💡 Pseudocode</h2>
+
+        <div class="algorithm-box">
+
+<pre>
+for i = 1 to n-1
+
+    key = A[i]
+
+    j = i-1
+
+    while j >= 0 AND A[j] > key
+
+        A[j+1] = A[j]
+
+        j = j-1
+
+    end while
+
+    A[j+1] = key
+
+end for
+</pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMPLEXITY -->
+
+    <section class="theory-section">
+
+        <h2>⏱ Time Complexity</h2>
+
+        <table class="complexity-table">
+
+            <tr>
+                <th>Case</th>
+                <th>Complexity</th>
+            </tr>
+
+            <tr>
+                <td>Best Case</td>
+                <td>O(n)</td>
+            </tr>
+
+            <tr>
+                <td>Average Case</td>
+                <td>O(n²)</td>
+            </tr>
+
+            <tr>
+                <td>Worst Case</td>
+                <td>O(n²)</td>
+            </tr>
+
+            <tr>
+                <td>Space Complexity</td>
+                <td>O(1)</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- ADVANTAGES -->
+
+    <section class="theory-section">
+
+        <h2>✅ Advantages</h2>
+
+        <ul>
+
+            <li>
+                Simple and easy to implement.
+            </li>
+
+            <li>
+                Requires O(1) extra space.
+            </li>
+
+            <li>
+                Efficient for small datasets.
+            </li>
+
+            <li>
+                Efficient when the array is already
+                nearly sorted.
+            </li>
+
+            <li>
+                Stable sorting algorithm.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- DISADVANTAGES -->
+
+    <section class="theory-section">
+
+        <h2>❌ Disadvantages</h2>
+
+        <ul>
+
+            <li>
+                O(n²) average and worst-case time.
+            </li>
+
+            <li>
+                Not suitable for large datasets.
+            </li>
+
+            <li>
+                Requires many shifts for reverse-sorted
+                arrays.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- C CODE -->
+
+    <section class="theory-section">
+
+        <h2>💻 C Language Implementation</h2>
+
+        <p>
+            Complete Insertion Sort implementation
+            using C language.
+        </p>
+
+        <div class="code-box">
+
+<pre><code>#include &lt;stdio.h&gt;
+
+void insertionSort(int arr[], int n)
+{
+    int i;
+    int j;
+    int key;
+
+    for(i = 1; i &lt; n; i++)
+    {
+        key = arr[i];
+
+        j = i - 1;
+
+        while(
+            j &gt;= 0 &&
+            arr[j] &gt; key
+        )
+        {
+            arr[j + 1] = arr[j];
+
+            j--;
+        }
+
+        arr[j + 1] = key;
+    }
+}
+
+
+int main()
+{
+    int arr[] = {
+        40, 20, 30, 10, 50
+    };
+
+    int n = 5;
+
+    int i;
+
+
+    insertionSort(arr, n);
+
+
+    printf("Sorted Array: ");
+
+
+    for(i = 0; i &lt; n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+
+    return 0;
+}</code></pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- VISUALIZATION -->
+
+    <section class="visualization-card">
+
+        <div>
+
+            <h2>
+                🧪 Insertion Sort Visualization
+            </h2>
+
+            <p>
+                Visualize key selection, comparisons,
+                shifting and insertion step by step.
+            </p>
+
+        </div>
+
+        <a
+            href="{% url 'insertion_sort_visualization' %}"
+            class="visualization-btn">
+
+            Open Visualization →
+
+        </a>
+
+    </section>
+
+</div>
+
+
+<script src="{% static 'lab/js/insertion_sort.js' %}">
+</script>
+
+{% endblock %}

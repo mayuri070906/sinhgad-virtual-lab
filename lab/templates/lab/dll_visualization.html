@@ -1,0 +1,331 @@
+{% extends 'lab/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Doubly Linked List Visualization
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet"
+      href="{% static 'lab/css/dll_visualization.css' %}">
+
+
+<div class="dll-viz-page">
+
+
+    <!-- HEADER -->
+
+    <div class="dll-viz-header">
+
+        <div class="dll-viz-breadcrumb">
+            Data Structures / Doubly Linked List
+        </div>
+
+        <div class="dll-viz-title-row">
+
+            <div>
+
+                <h1>
+                    Doubly Linked List
+                </h1>
+
+                <p>
+                    Learn and visualize insertion,
+                    deletion and searching operations.
+                </p>
+
+            </div>
+
+            <div class="dll-node-counter">
+
+                <span>
+                    Nodes:
+                </span>
+
+                <strong id="dll-node-count">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAIN AREA -->
+
+    <div class="dll-viz-layout">
+
+
+        <!-- VISUALIZATION -->
+
+        <div class="dll-visualization-card">
+
+            <div class="dll-card-header">
+
+                <div>
+
+                    <h2>
+                        Visualization
+                    </h2>
+
+                    <p>
+                        Doubly linked list structure
+                    </p>
+
+                </div>
+
+                <span id="dll-status"
+                      class="dll-status">
+                    Ready
+                </span>
+
+            </div>
+
+
+            <div class="dll-canvas"
+                 id="dll-canvas">
+
+                <div class="dll-head-label">
+                    HEAD
+                </div>
+
+                <div class="dll-head-arrow">
+                    ↓
+                </div>
+
+                <div id="dll-list"
+                     class="dll-list">
+
+                    <div class="dll-empty">
+                        Doubly Linked List is empty
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- OPERATIONS -->
+
+        <div class="dll-operations-card">
+
+            <h2>
+                Operations
+            </h2>
+
+            <p class="dll-operation-subtitle">
+                Enter value and select an operation.
+            </p>
+
+
+            <!-- VALUE -->
+
+            <label for="dll-value">
+                Value
+            </label>
+
+            <input
+                type="number"
+                id="dll-value"
+                placeholder="Enter value"
+                autocomplete="off"
+            >
+
+
+            <!-- INSERT DROPDOWN -->
+
+            <div class="dll-operation-group">
+
+                <button
+                    type="button"
+                    id="dll-insert-toggle"
+                    class="dll-operation-toggle">
+
+                    <span>
+                        Insert
+                    </span>
+
+                    <span>
+                        ▼
+                    </span>
+
+                </button>
+
+
+                <div
+                    id="dll-insert-menu"
+                    class="dll-operation-menu">
+
+                    <button
+                        type="button"
+                        data-operation="insertBegin">
+
+                        Begin Insert
+
+                    </button>
+
+                    <button
+                        type="button"
+                        data-operation="insertEnd">
+
+                        End Insert
+
+                    </button>
+
+                    <button
+                        type="button"
+                        data-operation="insertLocation">
+
+                        Location Insert
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- DELETE DROPDOWN -->
+
+            <div class="dll-operation-group">
+
+                <button
+                    type="button"
+                    id="dll-delete-toggle"
+                    class="dll-operation-toggle">
+
+                    <span>
+                        Delete
+                    </span>
+
+                    <span>
+                        ▼
+                    </span>
+
+                </button>
+
+
+                <div
+                    id="dll-delete-menu"
+                    class="dll-operation-menu">
+
+                    <button
+                        type="button"
+                        data-operation="deleteBegin">
+
+                        Begin Delete
+
+                    </button>
+
+                    <button
+                        type="button"
+                        data-operation="deleteEnd">
+
+                        End Delete
+
+                    </button>
+
+                    <button
+                        type="button"
+                        data-operation="deleteLocation">
+
+                        Location Delete
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- POSITION -->
+
+            <div id="dll-position-container"
+                 class="dll-position-container">
+
+                <label for="dll-position">
+                    Position
+                </label>
+
+                <input
+                    type="number"
+                    id="dll-position"
+                    min="1"
+                    placeholder="Enter position"
+                >
+
+            </div>
+
+
+            <!-- SELECTED OPERATION -->
+
+            <div id="dll-selected-operation"
+                 class="dll-selected-operation">
+
+                No operation selected
+
+            </div>
+
+
+            <!-- EXECUTE -->
+
+            <button
+                type="button"
+                id="dll-execute-btn"
+                class="dll-execute-btn">
+
+                Execute
+
+            </button>
+
+
+            <!-- SEARCH -->
+
+            <button
+                type="button"
+                id="dll-search-btn"
+                class="dll-secondary-btn">
+
+                🔍 Search
+
+            </button>
+
+
+            <!-- RESET -->
+
+            <button
+                type="button"
+                id="dll-reset-btn"
+                class="dll-reset-btn">
+
+                ↻ Reset
+
+            </button>
+
+
+            <!-- MESSAGE -->
+
+            <div id="dll-message"
+                 class="dll-message">
+
+                No operation selected
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="{% static 'lab/js/dll_visualization.js' %}">
+</script>
+
+{% endblock %}

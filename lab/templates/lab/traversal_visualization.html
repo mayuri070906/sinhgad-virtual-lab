@@ -1,0 +1,202 @@
+{% extends 'lab/base.html' %}
+{% load static %}
+
+{% block title %}
+Tree Traversal Visualization | Virtual Lab
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet"
+      href="{% static 'lab/css/traversal_visualization.css' %}">
+
+<div class="traversal-page">
+
+    <!-- HEADER -->
+
+    <div class="page-header">
+
+        <p class="small-title">
+            VIRTUAL LAB / TREE / TRAVERSAL
+        </p>
+
+        <h1>
+            🌳 Tree Traversal Visualization
+        </h1>
+
+        <p>
+            Insert values one by one to create a Binary Search Tree
+            and visualize Inorder, Preorder and Postorder traversal.
+        </p>
+
+    </div>
+
+
+    <!-- INSERT SECTION -->
+
+    <section class="control-card">
+
+        <h2>
+            🌱 Create Binary Search Tree
+        </h2>
+
+        <p class="helper-text">
+            Enter one value at a time and click
+            <b>Insert Node</b>.
+        </p>
+
+        <div class="input-row">
+
+            <input
+                type="number"
+                id="nodeValue"
+                placeholder="Enter value"
+            >
+
+            <button
+                id="insertBtn"
+                class="primary-btn">
+
+                Insert Node
+
+            </button>
+
+            <button
+                id="resetBtn"
+                class="reset-btn">
+
+                Reset Tree
+
+            </button>
+
+        </div>
+
+        <p id="insertMessage"
+           class="message">
+        </p>
+
+    </section>
+
+
+    <!-- TREE -->
+
+    <section class="tree-section">
+
+        <div class="section-heading">
+
+            <h2>
+                🌳 Your Binary Search Tree
+            </h2>
+
+            <p>
+                Nodes are inserted one by one according to
+                Binary Search Tree rules.
+            </p>
+
+        </div>
+
+
+        <div id="treeWrapper"
+             class="tree-wrapper">
+
+            <!-- SVG CONNECTIONS -->
+
+            <svg id="treeSvg"
+                 class="tree-svg">
+            </svg>
+
+
+            <!-- NODES -->
+
+            <div id="treeNodes"
+                 class="tree-nodes">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRAVERSAL CONTROLS -->
+
+    <section class="traversal-card">
+
+        <h2>
+            🔄 Perform Traversal
+        </h2>
+
+        <p>
+            First create your tree. Then select any traversal
+            to see the visiting order step by step.
+        </p>
+
+
+        <div class="traversal-buttons">
+
+            <button
+                id="inorderBtn"
+                class="traversal-btn">
+
+                Inorder
+
+            </button>
+
+
+            <button
+                id="preorderBtn"
+                class="traversal-btn">
+
+                Preorder
+
+            </button>
+
+
+            <button
+                id="postorderBtn"
+                class="traversal-btn">
+
+                Postorder
+
+            </button>
+
+        </div>
+
+
+        <!-- CURRENT STEP -->
+
+        <div class="current-step">
+
+            <h3>
+                📍 Current Step
+            </h3>
+
+            <p id="currentStep">
+                Select a traversal to begin.
+            </p>
+
+        </div>
+
+
+        <!-- RESULT -->
+
+        <div class="traversal-result">
+
+            <h3>
+                📋 Traversal Result
+            </h3>
+
+            <div id="result">
+                -
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="{% static 'lab/js/traversal_visualization.js' %}">
+</script>
+
+{% endblock %}

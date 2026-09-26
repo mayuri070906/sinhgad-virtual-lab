@@ -1,0 +1,707 @@
+{% extends 'lab/base.html' %}
+{% load static %}
+
+{% block title %}
+Singly Linked List
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet"
+      href="{% static 'lab/css/singly_linked_list.css' %}">
+
+<div class="sll-theory-page">
+
+    <!-- HEADER -->
+
+    <div class="sll-hero">
+
+        <div class="breadcrumb">
+            Data Structures → Singly Linked List
+        </div>
+
+        <h1>
+            🔗 Singly Linked List
+        </h1>
+
+        <p>
+            Learn the concept, structure, operations,
+            advantages, disadvantages and C implementation of
+            Singly Linked List.
+        </p>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <div class="theory-nav">
+
+        <a href="#introduction">Introduction</a>
+
+        <a href="#structure">Structure</a>
+
+        <a href="#operations">Operations</a>
+
+        <a href="#advantages">Advantages</a>
+
+        <a href="#disadvantages">Disadvantages</a>
+
+        <a href="#applications">Applications</a>
+
+        <a href="#complexity">Complexity</a>
+
+        <a href="#ccode">C Code</a>
+
+    </div>
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="theory-card" id="introduction">
+
+        <h2>📖 What is Singly Linked List?</h2>
+
+        <p>
+            A Singly Linked List is a linear data structure
+            in which elements are stored in nodes.
+            Each node contains two parts:
+            <strong>data</strong> and a pointer to the
+            <strong>next node</strong>.
+        </p>
+
+        <p>
+            Unlike an array, linked list elements are not
+            stored in contiguous memory locations.
+            Each node points to the next node using a pointer.
+        </p>
+
+        <div class="key-box">
+            <strong>Key Idea:</strong>
+            Data + Address of Next Node
+        </div>
+
+    </section>
+
+
+    <!-- STRUCTURE -->
+
+    <section class="theory-card" id="structure">
+
+        <h2>🧩 Structure of Singly Linked List</h2>
+
+        <p>
+            A node in a singly linked list contains:
+        </p>
+
+        <ul>
+
+            <li>
+                <strong>Data:</strong>
+                Stores the actual value.
+            </li>
+
+            <li>
+                <strong>Next:</strong>
+                Stores the address of the next node.
+            </li>
+
+        </ul>
+
+        <div class="node-example">
+
+            <div class="node-box">
+
+                <div>10</div>
+
+                <div class="next-part">
+                    next →
+                </div>
+
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="node-box">
+
+                <div>20</div>
+
+                <div class="next-part">
+                    next →
+                </div>
+
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="node-box">
+
+                <div>30</div>
+
+                <div class="next-part">
+                    NULL
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="head-example">
+            HEAD → 10 → 20 → 30 → NULL
+        </div>
+
+
+        <h3>Node Structure in C</h3>
+
+        <div class="code-box">
+
+<pre><code>struct Node
+{
+    int data;
+    struct Node *next;
+};</code></pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- OPERATIONS -->
+
+    <section class="theory-card" id="operations">
+
+        <h2>⚙️ Operations</h2>
+
+        <p>
+            The following operations can be performed
+            on a Singly Linked List:
+        </p>
+
+        <div class="operation-grid">
+
+            <div class="operation-item">
+                <span>1</span>
+                <strong>Begin Insert</strong>
+                <p>Insert a new node at the beginning.</p>
+            </div>
+
+            <div class="operation-item">
+                <span>2</span>
+                <strong>End Insert</strong>
+                <p>Insert a new node at the end.</p>
+            </div>
+
+            <div class="operation-item">
+                <span>3</span>
+                <strong>Location Insert</strong>
+                <p>Insert a node at a specific position.</p>
+            </div>
+
+            <div class="operation-item">
+                <span>4</span>
+                <strong>Begin Delete</strong>
+                <p>Delete the first node.</p>
+            </div>
+
+            <div class="operation-item">
+                <span>5</span>
+                <strong>End Delete</strong>
+                <p>Delete the last node.</p>
+            </div>
+
+            <div class="operation-item">
+                <span>6</span>
+                <strong>Location Delete</strong>
+                <p>Delete a node from a specific position.</p>
+            </div>
+
+            <div class="operation-item">
+                <span>7</span>
+                <strong>Search</strong>
+                <p>Search for a particular value.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ADVANTAGES -->
+
+    <section class="theory-card" id="advantages">
+
+        <h2>✅ Advantages</h2>
+
+        <ul class="normal-list">
+
+            <li>
+                Dynamic size.
+            </li>
+
+            <li>
+                Efficient insertion and deletion.
+            </li>
+
+            <li>
+                Memory is allocated dynamically.
+            </li>
+
+            <li>
+                Does not require contiguous memory.
+            </li>
+
+            <li>
+                Easy to grow and shrink during runtime.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- DISADVANTAGES -->
+
+    <section class="theory-card" id="disadvantages">
+
+        <h2>❌ Disadvantages</h2>
+
+        <ul class="normal-list">
+
+            <li>
+                Extra memory is required for storing pointers.
+            </li>
+
+            <li>
+                Random access is not possible.
+            </li>
+
+            <li>
+                Searching takes O(n) time.
+            </li>
+
+            <li>
+                Traversal is possible only in forward direction.
+            </li>
+
+            <li>
+                Pointer manipulation is required.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- APPLICATIONS -->
+
+    <section class="theory-card" id="applications">
+
+        <h2>📱 Applications</h2>
+
+        <ul class="normal-list">
+
+            <li>Implementation of stacks.</li>
+
+            <li>Implementation of queues.</li>
+
+            <li>Dynamic memory management.</li>
+
+            <li>Graph representation.</li>
+
+            <li>Hash table chaining.</li>
+
+            <li>Polynomial representation.</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- COMPLEXITY -->
+
+    <section class="theory-card" id="complexity">
+
+        <h2>⏱ Time Complexity</h2>
+
+        <table class="complexity-table">
+
+            <thead>
+
+                <tr>
+                    <th>Operation</th>
+                    <th>Time Complexity</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Begin Insert</td>
+                    <td>O(1)</td>
+                </tr>
+
+                <tr>
+                    <td>End Insert</td>
+                    <td>O(n)</td>
+                </tr>
+
+                <tr>
+                    <td>Location Insert</td>
+                    <td>O(n)</td>
+                </tr>
+
+                <tr>
+                    <td>Begin Delete</td>
+                    <td>O(1)</td>
+                </tr>
+
+                <tr>
+                    <td>End Delete</td>
+                    <td>O(n)</td>
+                </tr>
+
+                <tr>
+                    <td>Location Delete</td>
+                    <td>O(n)</td>
+                </tr>
+
+                <tr>
+                    <td>Search</td>
+                    <td>O(n)</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <!-- C CODE -->
+
+    <section class="theory-card" id="ccode">
+
+        <h2>💻 C Language Implementation</h2>
+
+        <p>
+            Complete implementation of Singly Linked List
+            using C language.
+        </p>
+
+        <div class="code-box">
+
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+struct Node
+{
+    int data;
+    struct Node *next;
+};
+
+struct Node *head = NULL;
+
+
+/* Insert at Beginning */
+
+void insertBegin(int value)
+{
+    struct Node *newNode;
+
+    newNode =
+        (struct Node*)malloc(sizeof(struct Node));
+
+    newNode-&gt;data = value;
+
+    newNode-&gt;next = head;
+
+    head = newNode;
+}
+
+
+/* Insert at End */
+
+void insertEnd(int value)
+{
+    struct Node *newNode;
+    struct Node *temp;
+
+    newNode =
+        (struct Node*)malloc(sizeof(struct Node));
+
+    newNode-&gt;data = value;
+
+    newNode-&gt;next = NULL;
+
+    if (head == NULL)
+    {
+        head = newNode;
+        return;
+    }
+
+    temp = head;
+
+    while (temp-&gt;next != NULL)
+    {
+        temp = temp-&gt;next;
+    }
+
+    temp-&gt;next = newNode;
+}
+
+
+/* Insert at Location */
+
+void insertLocation(int value, int position)
+{
+    struct Node *newNode;
+    struct Node *temp;
+
+    newNode =
+        (struct Node*)malloc(sizeof(struct Node));
+
+    newNode-&gt;data = value;
+
+    if (position == 1)
+    {
+        newNode-&gt;next = head;
+
+        head = newNode;
+
+        return;
+    }
+
+    temp = head;
+
+    for (int i = 1;
+         i &lt; position - 1 &amp;&amp; temp != NULL;
+         i++)
+    {
+        temp = temp-&gt;next;
+    }
+
+    if (temp == NULL)
+    {
+        printf("Invalid position\n");
+
+        free(newNode);
+
+        return;
+    }
+
+    newNode-&gt;next = temp-&gt;next;
+
+    temp-&gt;next = newNode;
+}
+
+
+/* Delete at Beginning */
+
+void deleteBegin()
+{
+    struct Node *temp;
+
+    if (head == NULL)
+    {
+        printf("List is empty\n");
+        return;
+    }
+
+    temp = head;
+
+    head = head-&gt;next;
+
+    free(temp);
+}
+
+
+/* Delete at End */
+
+void deleteEnd()
+{
+    struct Node *temp;
+    struct Node *prev;
+
+    if (head == NULL)
+    {
+        printf("List is empty\n");
+        return;
+    }
+
+    if (head-&gt;next == NULL)
+    {
+        free(head);
+
+        head = NULL;
+
+        return;
+    }
+
+    temp = head;
+
+    while (temp-&gt;next != NULL)
+    {
+        prev = temp;
+
+        temp = temp-&gt;next;
+    }
+
+    prev-&gt;next = NULL;
+
+    free(temp);
+}
+
+
+/* Delete at Location */
+
+void deleteLocation(int position)
+{
+    struct Node *temp;
+    struct Node *prev;
+
+    if (head == NULL)
+    {
+        printf("List is empty\n");
+        return;
+    }
+
+    if (position == 1)
+    {
+        temp = head;
+
+        head = head-&gt;next;
+
+        free(temp);
+
+        return;
+    }
+
+    temp = head;
+
+    for (int i = 1;
+         i &lt; position &amp;&amp; temp != NULL;
+         i++)
+    {
+        prev = temp;
+
+        temp = temp-&gt;next;
+    }
+
+    if (temp == NULL)
+    {
+        printf("Invalid position\n");
+        return;
+    }
+
+    prev-&gt;next = temp-&gt;next;
+
+    free(temp);
+}
+
+
+/* Search */
+
+void search(int value)
+{
+    struct Node *temp;
+
+    int position = 1;
+
+    temp = head;
+
+    while (temp != NULL)
+    {
+        if (temp-&gt;data == value)
+        {
+            printf("Found at position %d\n",
+                   position);
+
+            return;
+        }
+
+        temp = temp-&gt;next;
+
+        position++;
+    }
+
+    printf("Value not found\n");
+}
+
+
+/* Display */
+
+void display()
+{
+    struct Node *temp = head;
+
+    while (temp != NULL)
+    {
+        printf("%d -&gt; ", temp-&gt;data);
+
+        temp = temp-&gt;next;
+    }
+
+    printf("NULL\n");
+}
+
+
+int main()
+{
+    insertBegin(10);
+
+    insertEnd(20);
+
+    insertEnd(30);
+
+    insertLocation(15, 2);
+
+    display();
+
+    search(20);
+
+    deleteBegin();
+
+    deleteEnd();
+
+    deleteLocation(2);
+
+    display();
+
+    return 0;
+}</code></pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- VISUALIZATION -->
+
+    <section class="visualization-card">
+
+        <div>
+
+            <h2>🧪 Interactive Visualization</h2>
+
+            <p>
+                Perform insertion, deletion and search
+                operations visually.
+            </p>
+
+        </div>
+
+        <a href="{% url 'sll_visualization' %}"
+           class="visualization-btn">
+
+            Open Visualization →
+
+        </a>
+
+    </section>
+
+</div>
+
+<script src="{% static 'lab/js/singly_linked_list.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,734 @@
+{% extends 'lab/base.html' %}
+{% load static %}
+
+{% block title %}
+Searching
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet"
+      href="{% static 'lab/css/searching.css' %}">
+
+<div class="searching-page">
+
+    <!-- HERO -->
+
+    <div class="searching-hero">
+
+        <div class="breadcrumb">
+            Data Structures → Searching
+        </div>
+
+        <h1>
+            🔍 Searching
+        </h1>
+
+        <p>
+            Learn searching techniques, algorithms,
+            C language implementation and complexity.
+        </p>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <div class="search-nav">
+
+        <a href="#introduction">
+            Introduction
+        </a>
+
+        <a href="#linear">
+            Linear Search
+        </a>
+
+        <a href="#binary">
+            Binary Search
+        </a>
+
+        <a href="#comparison">
+            Comparison
+        </a>
+
+        <a href="#applications">
+            Applications
+        </a>
+
+        <a href="#complexity">
+            Complexity
+        </a>
+
+        <a href="#ccode">
+            C Code
+        </a>
+
+    </div>
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="search-card"
+             id="introduction">
+
+        <h2>
+            📖 What is Searching?
+        </h2>
+
+        <p>
+            Searching is the process of finding a particular
+            element or value from a collection of data.
+        </p>
+
+        <p>
+            The value that we want to find is called the
+            <strong>search key</strong>.
+        </p>
+
+        <div class="key-box">
+
+            <strong>Example:</strong>
+
+            If an array contains
+            10, 20, 30, 40, 50
+            and we want to find 30,
+            then 30 is the search key.
+
+        </div>
+
+    </section>
+
+
+    <!-- LINEAR SEARCH -->
+
+    <section class="search-card"
+             id="linear">
+
+        <h2>
+            🔎 Linear Search
+        </h2>
+
+        <p>
+            Linear Search checks every element one by one
+            from the beginning of the array until the required
+            element is found or the array ends.
+        </p>
+
+        <h3>
+            How Linear Search Works
+        </h3>
+
+        <ol>
+
+            <li>
+                Start from the first element.
+            </li>
+
+            <li>
+                Compare the current element with the
+                search key.
+            </li>
+
+            <li>
+                If both are equal, the element is found.
+            </li>
+
+            <li>
+                Otherwise move to the next element.
+            </li>
+
+            <li>
+                Continue until the element is found
+                or the array ends.
+            </li>
+
+        </ol>
+
+
+        <div class="search-example">
+
+            <div class="array-item">
+                10
+            </div>
+
+            <div class="array-item">
+                20
+            </div>
+
+            <div class="array-item active">
+                30
+            </div>
+
+            <div class="array-item">
+                40
+            </div>
+
+            <div class="array-item">
+                50
+            </div>
+
+        </div>
+
+        <p class="example-label">
+            Search Key = 30
+        </p>
+
+
+        <h3>
+            Linear Search Algorithm
+        </h3>
+
+        <div class="algorithm-box">
+
+<pre><code>LinearSearch(array, n, key)
+
+1. Start from index 0
+2. Compare array[i] with key
+3. If array[i] == key
+       return i
+4. Otherwise continue
+5. If element is not found
+       return -1</code></pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- BINARY SEARCH -->
+
+    <section class="search-card"
+             id="binary">
+
+        <h2>
+            ⚡ Binary Search
+        </h2>
+
+        <p>
+            Binary Search is an efficient searching technique
+            that works on a <strong>sorted array</strong>.
+        </p>
+
+        <p>
+            It repeatedly divides the search range into two
+            halves and eliminates the half that cannot contain
+            the required element.
+        </p>
+
+
+        <h3>
+            How Binary Search Works
+        </h3>
+
+        <ol>
+
+            <li>
+                The array must be sorted.
+            </li>
+
+            <li>
+                Find the middle element.
+            </li>
+
+            <li>
+                Compare the middle element with the search key.
+            </li>
+
+            <li>
+                If equal, the element is found.
+            </li>
+
+            <li>
+                If the key is smaller, search the left half.
+            </li>
+
+            <li>
+                If the key is larger, search the right half.
+            </li>
+
+        </ol>
+
+
+        <div class="search-example">
+
+            <div class="array-item">
+                10
+            </div>
+
+            <div class="array-item">
+                20
+            </div>
+
+            <div class="array-item">
+                30
+            </div>
+
+            <div class="array-item active">
+                40
+            </div>
+
+            <div class="array-item">
+                50
+            </div>
+
+        </div>
+
+        <p class="example-label">
+            Sorted Array → Search Key = 40
+        </p>
+
+
+        <h3>
+            Binary Search Algorithm
+        </h3>
+
+        <div class="algorithm-box">
+
+<pre><code>BinarySearch(array, n, key)
+
+1. low = 0
+2. high = n - 1
+
+3. while low &lt;= high
+
+       mid = (low + high) / 2
+
+       if array[mid] == key
+           return mid
+
+       else if key &lt; array[mid]
+           high = mid - 1
+
+       else
+           low = mid + 1
+
+4. return -1</code></pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMPARISON -->
+
+    <section class="search-card"
+             id="comparison">
+
+        <h2>
+            ⚖️ Linear Search vs Binary Search
+        </h2>
+
+        <table class="comparison-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Feature
+                    </th>
+
+                    <th>
+                        Linear Search
+                    </th>
+
+                    <th>
+                        Binary Search
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        Data Requirement
+                    </td>
+
+                    <td>
+                        Sorted or Unsorted
+                    </td>
+
+                    <td>
+                        Sorted
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        Technique
+                    </td>
+
+                    <td>
+                        Sequential
+                    </td>
+
+                    <td>
+                        Divide and Conquer
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        Best Case
+                    </td>
+
+                    <td>
+                        O(1)
+                    </td>
+
+                    <td>
+                        O(1)
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        Average Case
+                    </td>
+
+                    <td>
+                        O(n)
+                    </td>
+
+                    <td>
+                        O(log n)
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        Worst Case
+                    </td>
+
+                    <td>
+                        O(n)
+                    </td>
+
+                    <td>
+                        O(log n)
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <!-- APPLICATIONS -->
+
+    <section class="search-card"
+             id="applications">
+
+        <h2>
+            📱 Applications of Searching
+        </h2>
+
+        <ul class="normal-list">
+
+            <li>
+                Finding records in databases.
+            </li>
+
+            <li>
+                Searching names in contact lists.
+            </li>
+
+            <li>
+                Finding products in an online store.
+            </li>
+
+            <li>
+                Searching files in a computer.
+            </li>
+
+            <li>
+                Finding values in arrays and data structures.
+            </li>
+
+            <li>
+                Information retrieval systems.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- COMPLEXITY -->
+
+    <section class="search-card"
+             id="complexity">
+
+        <h2>
+            ⏱ Time Complexity
+        </h2>
+
+        <table class="complexity-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Search
+                    </th>
+
+                    <th>
+                        Best
+                    </th>
+
+                    <th>
+                        Average
+                    </th>
+
+                    <th>
+                        Worst
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        Linear Search
+                    </td>
+
+                    <td>
+                        O(1)
+                    </td>
+
+                    <td>
+                        O(n)
+                    </td>
+
+                    <td>
+                        O(n)
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        Binary Search
+                    </td>
+
+                    <td>
+                        O(1)
+                    </td>
+
+                    <td>
+                        O(log n)
+                    </td>
+
+                    <td>
+                        O(log n)
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <!-- C CODE -->
+
+    <section class="search-card"
+             id="ccode">
+
+        <h2>
+            💻 C Language Implementation
+        </h2>
+
+        <p>
+            Below is the C implementation of both
+            Linear Search and Binary Search.
+        </p>
+
+
+        <div class="code-title">
+            Linear Search
+        </div>
+
+        <div class="code-box">
+
+<pre><code>#include &lt;stdio.h&gt;
+
+int linearSearch(
+    int arr[],
+    int n,
+    int key
+)
+{
+    for (int i = 0; i &lt; n; i++)
+    {
+        if (arr[i] == key)
+        {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+int main()
+{
+    int arr[] = {
+        10, 20, 30, 40, 50
+    };
+
+    int n = 5;
+
+    int key = 30;
+
+    int result =
+        linearSearch(arr, n, key);
+
+    if (result != -1)
+    {
+        printf(
+            "Element found at position %d",
+            result + 1
+        );
+    }
+    else
+    {
+        printf("Element not found");
+    }
+
+    return 0;
+}</code></pre>
+
+        </div>
+
+
+        <div class="code-title">
+            Binary Search
+        </div>
+
+        <div class="code-box">
+
+<pre><code>#include &lt;stdio.h&gt;
+
+int binarySearch(
+    int arr[],
+    int n,
+    int key
+)
+{
+    int low = 0;
+
+    int high = n - 1;
+
+    while (low &lt;= high)
+    {
+        int mid =
+            (low + high) / 2;
+
+        if (arr[mid] == key)
+        {
+            return mid;
+        }
+
+        else if (key &lt; arr[mid])
+        {
+            high = mid - 1;
+        }
+
+        else
+        {
+            low = mid + 1;
+        }
+    }
+
+    return -1;
+}
+
+int main()
+{
+    int arr[] = {
+        10, 20, 30, 40, 50
+    };
+
+    int n = 5;
+
+    int key = 40;
+
+    int result =
+        binarySearch(arr, n, key);
+
+    if (result != -1)
+    {
+        printf(
+            "Element found at position %d",
+            result + 1
+        );
+    }
+    else
+    {
+        printf("Element not found");
+    }
+
+    return 0;
+}</code></pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- VISUALIZATION -->
+
+    <section class="visualization-card">
+
+        <div>
+
+            <h2>
+                🧪 Interactive Visualization
+            </h2>
+
+            <p>
+                Visualize Linear Search and Binary Search
+                step by step.
+            </p>
+
+        </div>
+
+        <a href="{% url 'searching_visualization' %}"
+           class="visualization-btn">
+
+            Open Visualization →
+
+        </a>
+
+    </section>
+
+</div>
+
+
+<script src="{% static 'lab/js/searching.js' %}"></script>
+
+{% endblock %}

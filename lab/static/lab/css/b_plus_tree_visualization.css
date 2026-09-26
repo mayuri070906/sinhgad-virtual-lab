@@ -1,0 +1,652 @@
+/* =========================================
+   PAGE
+========================================= */
+
+.bplus-page {
+
+    min-height: 100vh;
+
+    background: #f4f7fb;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #102a43;
+
+    padding-bottom: 50px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.page-header {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 45px 25px 20px;
+}
+
+
+.small-title {
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+
+    color: #64748b;
+}
+
+
+.page-header h1 {
+
+    margin: 10px 0;
+
+    font-size: 42px;
+
+    color: #0f172a;
+}
+
+
+.page-header p {
+
+    font-size: 17px;
+
+    color: #52667a;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.control-card,
+.info-card,
+.tree-section,
+.leaf-section,
+.operation-card,
+.result-card {
+
+    width:
+        calc(100% - 30px);
+
+    max-width: 1150px;
+
+    margin: 22px auto;
+
+    padding: 28px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 1px solid #dbe3ec;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 6px 18px
+        rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.input-row {
+
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-top: 18px;
+}
+
+
+.key-row {
+
+    margin-top: 25px;
+}
+
+
+input {
+
+    width: 220px;
+
+    height: 45px;
+
+    padding: 0 14px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+
+input:focus {
+
+    outline: none;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button {
+
+    height: 45px;
+
+    padding: 0 22px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.order-btn {
+
+    background: #2563eb;
+
+    color: white;
+}
+
+
+.insert-btn {
+
+    background: #111827;
+
+    color: white;
+}
+
+
+.reset-btn {
+
+    background: #e2e8f0;
+
+    color: #111827;
+}
+
+
+button:disabled {
+
+    background: #cbd5e1;
+
+    color: #64748b;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.message {
+
+    margin-top: 18px;
+
+    font-weight: 700;
+
+    color: #15803d;
+}
+
+
+/* =========================================
+   INFORMATION
+========================================= */
+
+.info-card {
+
+    display: flex;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+.info-box {
+
+    flex: 1;
+
+    min-width: 180px;
+
+    padding: 18px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+}
+
+
+.info-box span {
+
+    display: block;
+
+    color: #64748b;
+
+    margin-bottom: 6px;
+}
+
+
+.info-box strong {
+
+    font-size: 24px;
+
+    color: #2563eb;
+}
+
+
+/* =========================================
+   TREE AREA
+========================================= */
+
+.tree-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 650px;
+
+    margin-top: 25px;
+
+    background: #1e1e1e;
+
+    border-radius: 14px;
+
+    overflow: auto;
+
+    border: 1px solid #111827;
+}
+
+
+/* =========================================
+   SVG
+========================================= */
+
+.tree-lines {
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   NODES
+========================================= */
+
+.tree-nodes {
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   EMPTY
+========================================= */
+
+.empty-tree {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    color: #94a3b8;
+
+    font-size: 18px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   B+ TREE NODE
+========================================= */
+
+.bplus-node {
+
+    position: absolute;
+
+    transform:
+        translate(-50%, -50%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 52px;
+
+    background: #f8fafc;
+
+    border: 2px solid #60a5fa;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 14px
+        rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================
+   INTERNAL NODE
+========================================= */
+
+.internal-node {
+
+    border-color: #a78bfa;
+
+    background: #f5f3ff;
+}
+
+
+/* =========================================
+   LEAF NODE
+========================================= */
+
+.leaf-node {
+
+    border-color: #22c55e;
+
+    background: #f0fdf4;
+}
+
+
+/* =========================================
+   KEY
+========================================= */
+
+.bplus-key {
+
+    min-width: 44px;
+
+    height: 52px;
+
+    padding: 0 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 700;
+
+    color: #111827;
+
+    border-right: 1px solid #94a3b8;
+
+    box-sizing: border-box;
+}
+
+
+.bplus-key:last-child {
+
+    border-right: none;
+}
+
+
+/* =========================================
+   NEW NODE
+========================================= */
+
+.new-node {
+
+    box-shadow:
+        0 0 0 6px
+        rgba(34, 197, 94, 0.18);
+}
+
+
+/* =========================================
+   TREE EDGE
+========================================= */
+
+.tree-edge {
+
+    stroke: #cbd5e1;
+
+    stroke-width: 2.2;
+
+    fill: none;
+}
+
+
+/* =========================================
+   LEAF LINK
+========================================= */
+
+.leaf-edge {
+
+    stroke: #22c55e;
+
+    stroke-width: 3;
+
+    stroke-dasharray: 7 5;
+
+    fill: none;
+}
+
+
+/* =========================================
+   LEAF CHAIN
+========================================= */
+
+.leaf-chain {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+.leaf-chain-node {
+
+    display: flex;
+
+    align-items: center;
+
+    background: #f0fdf4;
+
+    border: 2px solid #22c55e;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+
+.leaf-chain-key {
+
+    min-width: 40px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0 8px;
+
+    font-weight: 700;
+
+    border-right: 1px solid #86efac;
+}
+
+
+.leaf-chain-key:last-child {
+
+    border-right: none;
+}
+
+
+.chain-arrow {
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: #16a34a;
+}
+
+
+/* =========================================
+   OPERATION
+========================================= */
+
+.operation-text {
+
+    padding: 18px;
+
+    background: #f8fafc;
+
+    border: 1px solid #dbe3ec;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    line-height: 1.7;
+
+    color: #334155;
+}
+
+
+/* =========================================
+   RESULT
+========================================= */
+
+.key-result {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+}
+
+
+.result-key {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .page-header h1 {
+
+        font-size: 30px;
+    }
+
+
+    .input-row {
+
+        flex-direction: column;
+    }
+
+
+    input,
+    button {
+
+        width: 100%;
+    }
+
+
+    .tree-wrapper {
+
+        height: 550px;
+    }
+
+}

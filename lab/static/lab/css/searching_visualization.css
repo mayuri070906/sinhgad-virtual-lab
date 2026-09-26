@@ -1,0 +1,286 @@
+.search-visual-page {
+    max-width: 1200px;
+    margin: 45px auto;
+    padding: 0 20px;
+    color: #111827;
+}
+
+
+/* HEADER */
+
+.visual-header {
+    margin-bottom: 30px;
+}
+
+.breadcrumb {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.visual-header h1 {
+    font-size: 40px;
+    margin: 0 0 8px;
+}
+
+.visual-header p {
+    color: #64748b;
+    margin: 0;
+}
+
+
+/* LAYOUT */
+
+.search-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+}
+
+
+/* CARDS */
+
+.search-visual-card,
+.control-card {
+    background: white;
+    border: 1px solid #e1e5eb;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+}
+
+.search-visual-card {
+    min-height: 500px;
+    padding: 25px;
+}
+
+.control-card {
+    padding: 25px;
+}
+
+
+/* HEADER */
+
+.visual-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.visual-card-header h2 {
+    margin: 0 0 5px;
+}
+
+.visual-card-header p {
+    color: #64748b;
+    font-size: 14px;
+    margin: 0;
+}
+
+.status {
+    background: #f1f5f9;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+
+/* ARRAY */
+
+.array-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 100px;
+    min-height: 100px;
+}
+
+.empty-array {
+    color: #94a3b8;
+}
+
+
+/* ARRAY ITEM */
+
+.array-item {
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid #111827;
+    border-radius: 9px;
+
+    background: white;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.array-item.checking {
+    transform: scale(1.12);
+    background: #f1f5f9;
+}
+
+.array-item.found {
+    transform: scale(1.15);
+    border-width: 4px;
+}
+
+.array-item.not-found {
+    opacity: 0.4;
+}
+
+
+/* INDEX */
+
+.index-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.index-item {
+    width: 75px;
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+}
+
+
+/* MESSAGE */
+
+.message {
+    margin-top: 50px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    padding: 15px;
+    text-align: center;
+    color: #475569;
+}
+
+
+/* CONTROLS */
+
+.control-card h2 {
+    margin: 0 0 5px;
+    font-size: 25px;
+}
+
+.control-subtitle {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.control-card label {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+.control-card input,
+.control-card select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-bottom: 17px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+
+    background: white;
+    font-size: 14px;
+    outline: none;
+}
+
+.control-card input:focus,
+.control-card select:focus {
+    border-color: #111827;
+}
+
+
+/* BUTTONS */
+
+.primary-btn,
+.secondary-btn,
+.reset-btn {
+    width: 100%;
+    border: none;
+    padding: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.primary-btn {
+    background: #111827;
+    color: white;
+}
+
+.secondary-btn {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.reset-btn {
+    background: #f1f3f5;
+    color: #111827;
+}
+
+
+/* INFO */
+
+.info-box {
+    margin-top: 22px;
+    padding: 15px;
+    background: #f8fafc;
+    border-radius: 9px;
+    border: 1px solid #e2e8f0;
+}
+
+.info-box p {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .search-layout {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .visual-header h1 {
+        font-size: 30px;
+    }
+
+    .array-item {
+        width: 55px;
+        height: 55px;
+        font-size: 16px;
+    }
+
+    .index-item {
+        width: 55px;
+    }
+
+}

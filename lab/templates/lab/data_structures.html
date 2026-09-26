@@ -1,0 +1,300 @@
+{% extends 'lab/base.html' %}
+{% load static %}
+
+{% block title %}
+Data Structures | Virtual Lab
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet"
+      href="{% static 'lab/css/data_structures.css' %}">
+
+<div class="page-container">
+
+    <!-- =========================
+         PAGE HEADER
+    ========================== -->
+
+    <div class="page-header">
+
+        <p class="small-title">
+            VIRTUAL LAB
+        </p>
+
+        <h1>
+            Data Structures
+        </h1>
+
+        <p>
+            Explore, learn and visualize different
+            data structures and algorithms interactively.
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         STRUCTURE GRID
+    ========================== -->
+
+    <div class="structure-grid">
+
+
+        <!-- =========================
+             STACK
+        ========================== -->
+
+        <div class="structure-card">
+
+            <div class="card-icon">
+                📚
+            </div>
+
+            <h2>
+                Stack
+            </h2>
+
+            <p>
+                Learn Push, Pop and Peek operations
+                using the LIFO principle.
+            </p>
+
+            <div class="card-info">
+                <span>LIFO</span>
+                <span>Push / Pop</span>
+            </div>
+
+            <a
+                href="{% url 'stack' %}"
+                class="primary-btn">
+
+                Open Stack Lab →
+
+            </a>
+
+        </div>
+
+
+        <!-- =========================
+             QUEUE
+        ========================== -->
+
+        <div class="structure-card">
+
+            <div class="card-icon">
+                🚶
+            </div>
+
+            <h2>
+                Queue
+            </h2>
+
+            <p>
+                Learn Enqueue, Dequeue and Peek
+                operations using the FIFO principle.
+            </p>
+
+            <div class="card-info">
+                <span>FIFO</span>
+                <span>Enqueue / Dequeue</span>
+            </div>
+
+            <a
+                href="{% url 'queue' %}"
+                class="primary-btn">
+
+                Open Queue Lab →
+
+            </a>
+
+        </div>
+
+
+        <!-- =========================
+             SINGLY LINKED LIST
+        ========================== -->
+
+        <div class="structure-card">
+
+            <div class="card-icon">
+                🔗
+            </div>
+
+            <h2>
+                Singly Linked List
+            </h2>
+
+            <p>
+                Learn nodes, next pointers,
+                insertion, deletion and searching.
+            </p>
+
+            <div class="card-info">
+                <span>Nodes</span>
+                <span>Next</span>
+            </div>
+
+            <a
+                href="{% url 'singly_linked_list' %}"
+                class="primary-btn">
+
+                Open Singly List →
+
+            </a>
+
+        </div>
+
+
+        <!-- =========================
+             DOUBLY LINKED LIST
+        ========================== -->
+
+        <div class="structure-card">
+
+            <div class="card-icon">
+                🔄
+            </div>
+
+            <h2>
+                Doubly Linked List
+            </h2>
+
+            <p>
+                Learn previous and next pointers
+                with two-way traversal.
+            </p>
+
+            <div class="card-info">
+                <span>Prev</span>
+                <span>Next</span>
+            </div>
+
+            <a
+                href="{% url 'doubly_linked_list' %}"
+                class="primary-btn">
+
+                Open Doubly List →
+
+            </a>
+
+        </div>
+
+
+        <!-- =========================
+             SEARCHING
+        ========================== -->
+
+        <div class="structure-card">
+
+            <div class="card-icon">
+                🔍
+            </div>
+
+            <h2>
+                Searching
+            </h2>
+
+            <p>
+                Learn how to find elements using
+                different searching techniques.
+            </p>
+
+            <div class="card-info">
+                <span>Linear</span>
+                <span>Binary</span>
+            </div>
+
+            <a
+                href="{% url 'searching' %}"
+                class="primary-btn">
+
+                Open Searching →
+
+            </a>
+
+        </div>
+
+
+        <!-- =========================
+             SORTING
+        ========================== -->
+
+        <div class="structure-card">
+
+            <div class="card-icon">
+                🔢
+            </div>
+
+            <h2>
+                Sorting
+            </h2>
+
+            <p>
+                Learn and visualize different
+                sorting algorithms step by step.
+            </p>
+
+            <div class="card-info">
+                <span>Bubble</span>
+                <span>Selection</span>
+                <span>Insertion</span>
+            </div>
+
+            <a
+                href="{% url 'sorting' %}"
+                class="primary-btn">
+
+                Open Sorting →
+
+            </a>
+
+        </div>
+
+
+        <!-- =========================
+             TREE
+        ========================== -->
+
+        <div class="structure-card">
+
+            <div class="card-icon">
+                🌳
+            </div>
+
+            <h2>
+                Tree
+            </h2>
+
+            <p>
+                Learn Binary Search Tree, tree
+                traversals, B Tree and B+ Tree.
+            </p>
+
+            <div class="card-info">
+                <span>BST</span>
+                <span>Traversal</span>
+                <span>B Tree</span>
+                <span>B+ Tree</span>
+            </div>
+
+            <a
+                href="{% url 'tree' %}"
+                class="primary-btn">
+
+                Open Tree Lab →
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<script src="{% static 'lab/js/data_structures.js' %}">
+</script>
+
+{% endblock %}
